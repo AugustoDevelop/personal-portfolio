@@ -3,6 +3,9 @@ import Switch from 'react-switch';
 import { ThemeContext } from 'styled-components';
 import { shade } from 'polished';
 import { Container } from './style';
+import { Link } from 'react-router-dom';
+
+import Logo from '../../assets/logo.png'
 
 interface Props {
   toggleTheme(): void;
@@ -13,22 +16,15 @@ const Header: React.FC<Props> = ({ toggleTheme }) => {
 
   return (
     <Container>
-      <p><a href="#home">&lsaquo;AD/&rsaquo;</a></p>
+      <Link to="/"><img alt="Augusto Develop" src={Logo} style={{height: "60px"}} /></Link>
       <div>
         <ul data-menu="list" id="menu">
-          <a href="#home">
-            <li>Home</li>
-          </a>
-          <a href="#sobre">
-            <li>Sobre</li>
-          </a>
-          <a href="#experiencia">
-            <li>Experience</li>
-          </a>
-          <a href="#projetos">
-            <li>Projetos</li>
-          </a>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/About">About</Link></li>
+          <li><Link to="/Experience">Experience</Link></li>
+          <li><Link to="/Projects">Projects</Link></li>
         </ul>
+
         <Switch
           onChange={toggleTheme}
           checked={title === 'dark'}
@@ -40,8 +36,8 @@ const Header: React.FC<Props> = ({ toggleTheme }) => {
           offColor={shade(0.15, colors.primary)}
           onColor={colors.secundary}
         />
+        
       </div>
-
     </Container>
   );
 };

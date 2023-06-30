@@ -12,7 +12,7 @@ import light from './styles/themes/light';
 import usePeristedState from './utils/usePersistedState'
 
 import Contact from './pages/Contact';
-import HomePage from './pages/Home';
+import HomePage from './pages/Homepage';
 import Header from './components/Header';
 import About from './pages/About';
 import Projects from './pages/Projects';

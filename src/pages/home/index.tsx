@@ -9,13 +9,10 @@ import GitHub from "../../assets/icons/github.svg";
 import GitHubDark from "../../assets/icons/githubDark.svg";
 import Linkedin from "../../assets/icons/linkedin.svg";
 import Curriculum from "../../assets/icons/Curri.svg";
-
-import About from '../about';
-import Contact from '../contact';
-import Experience from '../experience';
-import Projects from '../projects';
-
-import Carrossel from '../../components/carousel';
+import Carrossel from '../../components/Carousel';
+import About from '../About';
+import Contact from '../Contact';
+import Projects from '../Projects';
 
 interface Props {
   toggleTheme(): void;
@@ -55,11 +52,9 @@ const Home: React.FC<Props> = ({ toggleTheme }) => {
           </div>
           
       </Session>
-
       <Carrossel />
       <About />
       <Contact />
-      <Experience />
       <Projects />
   
     </Container>

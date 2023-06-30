@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import Linkedin from "../../assets/icons/linkedin.svg";
+import Linkedin from "../../assets/icons/Linkedin.svg";
 
 
 export default class About extends Component {

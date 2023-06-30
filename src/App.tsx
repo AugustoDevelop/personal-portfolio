@@ -12,7 +12,7 @@ import light from './styles/themes/light';
 import usePeristedState from './utils/usePersistedState'
 
 import Contact from './pages/Contact';
-import Home from './pages/Home';
+import HomePage from './pages/Home';
 import Header from './components/Header';
 import About from './pages/About';
 import Projects from './pages/Projects';
@@ -31,7 +31,7 @@ function App() {
             <GlobalStyle />
           </div>
           <Routes>
-            <Route element={<Home toggleTheme={toggleTheme}/>} path="/" />
+            <Route element={<HomePage toggleTheme={toggleTheme}/>} path="/" />
             <Route element={<About/>} path="/#about" />
             <Route element={<Projects/>} path="/#projects" />
             <Route element={<Contact/>} path="/contact" />

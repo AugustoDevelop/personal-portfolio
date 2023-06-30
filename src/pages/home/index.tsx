@@ -18,7 +18,7 @@ interface Props {
   toggleTheme(): void;
 }
 
-const Home: React.FC<Props> = () => {
+const HomePage: React.FC<Props> = () => {
   const { title } = useContext(ThemeContext);
   
   const githubIcon = title === 'dark' ?  GitHubDark : GitHub;
@@ -61,4 +61,4 @@ const Home: React.FC<Props> = () => {
   );
 };
 
-export default Home;
+export default HomePage;

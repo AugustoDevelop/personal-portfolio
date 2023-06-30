@@ -5,9 +5,9 @@ import { Container, ContainerNetworking, Session } from './style';
 import 'react-toggle/style.css';
 
 import Logo from '../../assets/hero-image.png';
-import GitHub from "../../assets/icons/github.svg";
-import GitHubDark from "../../assets/icons/githubDark.svg";
-import Linkedin from "../../assets/icons/linkedin.svg";
+import GitHub from "../../assets/icons/Github.svg";
+import GitHubDark from "../../assets/icons/GithubDark.svg";
+import Linkedin from "../../assets/icons/Linkedin.svg";
 import Curriculum from "../../assets/icons/Curri.svg";
 import Carrossel from '../../components/Carousel';
 import About from '../About';

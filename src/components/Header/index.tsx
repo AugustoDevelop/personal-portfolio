@@ -26,14 +26,10 @@ const Header: React.FC<Props> = ({ toggleTheme }) => {
     },
     {
       id: 3,
-      title: "experience"
-    },
-    {
-      id: 4,
       title: "projects"
     },
     {
-      id: 5,
+      id: 4,
       title: "contact"
     },    
   ]

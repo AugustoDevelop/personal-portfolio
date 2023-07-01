@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React from 'react';
+// import { ThemeContext } from 'styled-components';
 
 import { Container } from './style';
 import 'react-toggle/style.css';
@@ -18,7 +18,7 @@ interface Props {
 }
 
 const HomePage: React.FC<Props> = () => {
-  const { title } = useContext(ThemeContext);
+  // const { title } = useContext(ThemeContext);
   
   // const githubIcon = title === 'dark' ?  GitHubDark : GitHub;
 

@@ -8,4 +8,9 @@ export default {
       background: '#f5f5f5',
       text: '#000'
     },
+    resolution: {
+      mobile: 'var(--resolution-mobile)',
+      tablet: 'var(--resolution-tablet)',
+      full:  'var(--resolution-full)',
+    }
   };

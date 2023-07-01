@@ -1,18 +1,17 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
-import { Container, ContainerNetworking, Session } from './style';
+import { Container } from './style';
 import 'react-toggle/style.css';
 
-import Logo from '../../assets/hero-image.png';
-import GitHub from "../../assets/icons/Github.svg";
-import GitHubDark from "../../assets/icons/GithubDark.svg";
-import Linkedin from "../../assets/icons/Linkedin.svg";
-import Curriculum from "../../assets/icons/Curri.svg";
-import Carrossel from '../../components/Carousel';
-import About from '../About';
-import Contact from '../Contact';
-import Projects from '../Projects';
+// import Logo from '../../assets/hero-image.png';
+// import GitHub from "../../assets/icons/Github.svg";
+// import GitHubDark from "../../assets/icons/GithubDark.svg";
+// import Linkedin from "../../assets/icons/Linkedin.svg";
+// import Curriculum from "../../assets/icons/Curri.svg";
+// import Carrossel from '../../components/Carousel';
+// import ShortDescription from '../../components/shortDescription';
+import MainComponent from '../../components/MainComponent';
 
 interface Props {
   toggleTheme(): void;
@@ -21,17 +20,22 @@ interface Props {
 const HomePage: React.FC<Props> = () => {
   const { title } = useContext(ThemeContext);
   
-  const githubIcon = title === 'dark' ?  GitHubDark : GitHub;
+  // const githubIcon = title === 'dark' ?  GitHubDark : GitHub;
 
   return (
-    <Container className="hero" id='home'>
-      <Session className="hero__flex">
-      <img  alt="Foto de Augusto"
+    <Container id='home'>
+      {/* <Session className="short-description">
+        <div>
+            <h1>Olá, Eu sou Augusto Daniel 👋</h1>
+            <h2>Engenheiro de Software</h2>
+        </div>
+        <img  className="avatar-home" 
+          alt="Foto de Augusto"
           src={Logo} 
           loading="eager" sizes="(max-width: 200px) 100px, 200px"
-          className="hero__image"/>
+        /> */}
 
-          <div className="hero__text">
+          {/* <div className="hero__text">
             <h1 className="hero__name">Olá, Me chamo Augusto Daniel</h1>
             <div className="hero__position"><p className='writingText'>Desenvolvedor Fullstack</p></div>
             <ContainerNetworking>
@@ -50,12 +54,11 @@ const HomePage: React.FC<Props> = () => {
             </ContainerNetworking>
             
           </div>
-          
-      </Session>
-      <Carrossel />
-      <About />
-      <Contact />
-      <Projects />
+           */}
+      {/* </Session> */}
+      <MainComponent  />
+      
+      {/* <Carrossel /> */}
   
     </Container>
   );

@@ -10,6 +10,12 @@ declare module 'styled-components' {
 
       background: string;
       text: string;
-    }
+    };
+    
+    resolution: {
+      mobile: string,
+      tablet: string,
+      full: string
+    };
   }
 }

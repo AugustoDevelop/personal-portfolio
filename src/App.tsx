@@ -11,11 +11,12 @@ import light from './styles/themes/light';
 
 import usePeristedState from './utils/usePersistedState'
 
-import Contact from './pages/Contact';
-import HomePage from './pages/Homepage';
+// import Contact from './pages/Contact';
+// import HomePage from './pages/Homepage';
 import Header from './components/Header';
-import About from './pages/About';
-import Projects from './pages/Projects';
+import MainComponent from './components/MainComponent';
+// import About from './pages/About';
+// import Projects from './pages/Projects';
 
 function App() {
   
@@ -31,10 +32,12 @@ function App() {
             <GlobalStyle />
           </div>
           <Routes>
-            <Route element={<HomePage toggleTheme={toggleTheme}/>} path="/" />
-            <Route element={<About/>} path="/#about" />
-            <Route element={<Projects/>} path="/#projects" />
-            <Route element={<Contact/>} path="/contact" />
+            <Route element={<MainComponent />} path="/" />
+
+            {/* <Route element={<HomePage toggleTheme={toggleTheme}/>} path="/" /> */}
+            {/* <Route element={<About/>} path="/" />
+            <Route element={<Projects/>} path="/" />
+            <Route element={<Contact/>} path="/" /> */}
           </Routes>
        </BrowserRouter>
       

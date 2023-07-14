@@ -4,11 +4,14 @@ export default createGlobalStyle`
   :root {
     font-family: "Roboto", "Ubuntu", sans-serif;
 
+    --bg-primary: ${props => props.theme.colors.background};
+
     --color-primary: ${props => props.theme.colors.primary};
     --color-secondary: ${props => props.theme.colors.secundary};
-    --text-primary: green;
-    --text-secondary: red;
-    --bg-primary:${props => props.theme.colors.background};
+
+    --text-title-color: ${props => props.theme.text.title};
+    --text-sub-title-color: ${props => props.theme.text.main};
+
   }
 
   * {
@@ -23,9 +26,9 @@ export default createGlobalStyle`
   }
   
   body {
-    background: 
+    background: ${props => props.theme.colors.background};
     font-size: 14px;
-    color: ${props => props.theme.colors.text};
+    color: ${props => props.theme.colors.primary};
     
   }
 `;

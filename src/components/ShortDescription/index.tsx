@@ -8,7 +8,7 @@ export default class ShortDescription extends Component {
       <Container>
         <div>
           <h1>Hi, i´m Augusto! 👋</h1>
-          <h2>Software Engineer</h2>
+          <h2>Software Engineer Full Stack</h2>
         </div>
         <img  className="avatar-home" 
           alt="Foto de Augusto"

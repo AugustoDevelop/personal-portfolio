@@ -8,7 +8,9 @@ i18next.use(initReactI18next).init({
     },
     resources: {
         en:{
-            
+            transalation: {
+                welcome: "To English"
+            }
         },
         fr: {
             transalation: {

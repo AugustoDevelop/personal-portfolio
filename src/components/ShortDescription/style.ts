@@ -12,7 +12,7 @@ export const Container = styled.div`
     font-weight: 600;
     font-size: 28px;
     line-height: 42px;
-    color: var(--text-primary);
+    color: var(--text-title-color);
   }
 
   h2 {
@@ -20,7 +20,7 @@ export const Container = styled.div`
     font-weight: 400;
     font-size: 20px;
     line-height: 30px;
-    color: var(--text-secondary);
+    color: var(--text-sub-title-color);
   }
 
   @media (min-width: 800px) {

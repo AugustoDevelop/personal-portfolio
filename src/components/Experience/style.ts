@@ -12,7 +12,7 @@ export const Container = styled.div`
     font-weight: 300;
     font-size: 18px;
     line-height: 28px;
-    color: var(--text-secondary);
+    color: var(--text-sub-title-color);
     text-align: center;
   }
 
@@ -62,7 +62,7 @@ export const ContainerSkill = styled.div`
       border: 1px solid  linear-gradient(90deg, #777CF4 2.62%, #F47777 93.38%);
       background: linear-gradient(90deg, #777CF4 2.62%, #F47777 93.38%);
 
-      color: var(--text-primary);
+      color: var(--text-title-color);
       font-weight: 300;
       text-align: center;
       font-size: 12px;

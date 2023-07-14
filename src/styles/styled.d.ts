@@ -3,19 +3,16 @@ import 'styled-components';
 declare module 'styled-components' {
   export interface DefaultTheme {
     title: string;
-
     colors: {
       primary: string;
       secundary: string;
-
       background: string;
       text: string;
     };
-    
-    resolution: {
-      mobile: string,
-      tablet: string,
-      full: string
+    text: {
+      main: string;
+      title: string;
     };
+
   }
 }

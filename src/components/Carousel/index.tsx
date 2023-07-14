@@ -1,4 +1,4 @@
-import { CarouselItem, CarouselImage, CarouselContainer } from "./style";
+import { CarouselItem, CarouselImage, CarouselContainer, CarouselText } from "./style";
 import Angular from "../../assets/icons/Angular.svg";
 import CSS3 from "../../assets/icons/Css3.svg";
 import Git from "../../assets/icons/Git.svg";
@@ -57,12 +57,12 @@ export default function Carrossel() {
   
   return (
     <CarouselContainer>
-      <h2>Algumas tecnologias que tenho conhecimento</h2>
+      <h2>Some technologies I know</h2>
       <Slider {...settings}>
         {carouselItems.map((item) => (
           <CarouselItem key={item.icon}>
             <CarouselImage src={item.icon} alt={`${item.name}`} />
-            <span>{item.name}</span>
+            <CarouselText>{item.name}</CarouselText>
           </CarouselItem>
         ))}
       </Slider>

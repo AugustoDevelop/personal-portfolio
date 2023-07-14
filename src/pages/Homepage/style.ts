@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   #home {
+    background-color: ${props => props.theme.colors.background};
     padding: 40px 32px;
     display: grid;
     gap: 24px;
@@ -30,7 +31,7 @@ export const Container = styled.div`
         text-align: center;
         text-decoration: none;
 
-        color: var(--text-primary);
+        color: var(--text-title-color);
         font-weight: 500;
         font-size: 20px;
         line-height: 30px;

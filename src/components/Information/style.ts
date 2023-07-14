@@ -27,7 +27,7 @@ export const Container = styled.div`
   }
 
   span {
-    color: var(--text-secondary);
+    color: var(--text-sub-title-color);
     font-weight: 300;
     font-size: 18px;
     line-height: 28px;

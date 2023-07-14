@@ -29,7 +29,7 @@ export const Container = styled.div`
       text-align: center;
       text-decoration: none;
 
-      color: var(--text-primary);
+      color: var(--text-title-color);
       font-weight: 500;
       font-size: 20px;
       line-height: 30px;

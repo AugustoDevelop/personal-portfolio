@@ -1,6 +1,5 @@
 import { SectionTitle } from "../SectionTitle/index.tsx"
 import { Container } from "./style.ts"
-import Carrossel from "../Carousel/index.tsx";
 
 export function Experience(){
   
@@ -14,7 +13,7 @@ export function Experience(){
         <SectionTitle text="Experience"/>
         <p>+{diffInYears} years working as a Software Developer, in companies such as Accenture, Fundaj, and Effetives Sistema.</p>
       </Container>
-      <Carrossel />
+      {/* <Carrossel /> */}
     </>
   )
 }

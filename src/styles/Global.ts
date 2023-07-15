@@ -5,7 +5,6 @@ export default createGlobalStyle`
     font-family: "Roboto", "Ubuntu", sans-serif;
 
     --bg-primary: ${props => props.theme.colors.background};
-
     --color-primary: ${props => props.theme.colors.primary};
     --color-secondary: ${props => props.theme.colors.secundary};
 
@@ -29,6 +28,5 @@ export default createGlobalStyle`
     background: ${props => props.theme.colors.background};
     font-size: 14px;
     color: ${props => props.theme.colors.primary};
-    
   }
 `;

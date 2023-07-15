@@ -4,7 +4,7 @@ import React from 'react';
 import { Container } from './style';
 import 'react-toggle/style.css';
 
-// import Logo from '../../assets/hero-image.png';
+import Logo from '../../assets/hero-image.png';
 // import GitHub from "../../assets/icons/Github.svg";
 // import GitHubDark from "../../assets/icons/GithubDark.svg";
 // import Linkedin from "../../assets/icons/Linkedin.svg";
@@ -24,7 +24,7 @@ const HomePage: React.FC<Props> = () => {
 
   return (
     <Container id='home'>
-      {/* <Session className="short-description">
+      <Container className="short-description">
         <div>
             <h1>Olá, Eu sou Augusto Daniel 👋</h1>
             <h2>Engenheiro de Software</h2>
@@ -33,12 +33,12 @@ const HomePage: React.FC<Props> = () => {
           alt="Foto de Augusto"
           src={Logo} 
           loading="eager" sizes="(max-width: 200px) 100px, 200px"
-        /> */}
+        />
 
-          {/* <div className="hero__text">
+          <div className="hero__text">
             <h1 className="hero__name">Olá, Me chamo Augusto Daniel</h1>
             <div className="hero__position"><p className='writingText'>Desenvolvedor Fullstack</p></div>
-            <ContainerNetworking>
+            {/* <ContainerNetworking>
               <a href="https://github.com/AugustoDevelop" target="_blank">
                 <img src={githubIcon} alt="Github" />
               </a>
@@ -51,11 +51,11 @@ const HomePage: React.FC<Props> = () => {
                 <img id='curriculum' src={Curriculum} alt="Curriculum" />
               </a>
 
-            </ContainerNetworking>
+            </ContainerNetworking> */}
             
           </div>
-           */}
-      {/* </Session> */}
+          
+      </Container>
       <MainComponent  />
       
       {/* <Carrossel /> */}

@@ -14,7 +14,7 @@ interface Props {
 }
 
 const Header: React.FC<Props> = ({ toggleTheme }) => {
-  const { title } = useContext(ThemeContext);
+  const { title } = useContext(ThemeContext) || {};
   const menuItems = [
     {
       id: 1,
@@ -22,15 +22,15 @@ const Header: React.FC<Props> = ({ toggleTheme }) => {
     },
     {
       id: 2,
-      title: "home"
+      title: "about"
     },
     {
       id: 3,
-      title: "home"
+      title: "portifolio"
     },
     {
       id: 4,
-      title: "home"
+      title: "contact"
     },    
   ]
 

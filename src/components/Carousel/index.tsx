@@ -23,12 +23,14 @@ import TypeScript from "../../assets/icons/Typescript.svg";
 import Slider from "react-slick";
 import { useContext } from "react";
 import { ThemeContext } from 'styled-components';
+import { useTranslation } from 'react-i18next';
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export default function Carrossel() {
-  const { title } = useContext(ThemeContext);
+  const { t } = useTranslation()
+  const { title } = useContext(ThemeContext) || {};
 
   const nextIcon = title === "dark" ? NextDark : Next;
 
@@ -63,7 +65,7 @@ export default function Carrossel() {
   
   return (
     <CarouselContainer>
-      <H2Text>Some technologies,language and framework i know</H2Text>
+      <H2Text>{t("textCarousel")}</H2Text>
       <Slider {...settings}>
         {carouselItems.map((item) => (
           <CarouselItem key={item.icon}>

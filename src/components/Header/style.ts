@@ -6,7 +6,7 @@ export const Container = styled.div`
   left: 0;
   right: 0;
   height: 60px;
-  background: ${props => props.theme.colors.primary};
+  background: var(--bg-header);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -27,11 +27,7 @@ export const Container = styled.div`
 
   a {
     text-decoration: none;
-    color:${props => props.theme.colors.text};
-  }
-
-  a:hover {
-    color: #fff
+    color: var(--text-header);
   }
   
   div{
@@ -40,30 +36,26 @@ export const Container = styled.div`
   }
   
   .react-toggle-track {
-    background-color: var(--color-secondary) !important;
-  }
-
-  .react-toggle .react-toggle--checked custom-toggle{
-    background-color: var(--color-secondary) !important;
-  }
-
-  .react-toggle-track {
-    & .react-toggle-track-check {
-      & svg {
-        color: #000000
-      }
-    }
-
-    & .react-toggle-track-x{
-      & svg {
-        color: #000000
-      }
-    }
+    background-color: var(---color-switch) !important;
   }
 
   .react-toggle-track-x {
     padding-bottom: 17px;
   }
+
+  .react-toggle-track {
+    & .react-toggle-track-check {
+      & svg {
+        color: var(--bg-header);
+      }
+    }
+
+    & .react-toggle-track-x{
+      & svg {
+        color: var(--bg-header);
+      }
+    }
+  } 
 
   #menu {
     display: inline-flex;

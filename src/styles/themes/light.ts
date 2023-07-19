@@ -1,14 +1,14 @@
 export default {
   title: 'light',
   colors: {
-    primary:'#4a7d7f',
-    secundary: '#f5f5f5',
-    background: '#f5f5f5',
-    text: '#000',
+    background: '#fff',
+    backgroundHeader: '#10485B',
+    switchColor: '#64CCC5',
   },
   text: {
-    main: '#4a7d7f',
+    header: '#DAFFFB',
     title: '#333',
+    subTitle: '#304F50',
   },
 
 };

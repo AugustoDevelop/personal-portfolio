@@ -8,7 +8,7 @@ import { ThemeContext } from 'styled-components';
 
 export function SocialBtns(){
 
-  const { title } = useContext(ThemeContext);
+  const { title } = useContext(ThemeContext) || {};
 
   const gitIcon = title === "dark" ? GitHubIconDark : GitHubIcon;
 

@@ -5,12 +5,13 @@ export default createGlobalStyle`
     font-family: "Roboto", "Ubuntu", sans-serif;
 
     --bg-primary: ${props => props.theme.colors.background};
-    --color-primary: ${props => props.theme.colors.primary};
-    --color-secondary: ${props => props.theme.colors.secundary};
+    --bg-header: ${props => props.theme.colors.backgroundHeader};
 
+    ---color-switch: ${props => props.theme.colors.switchColor};
+
+    --text-header: ${props => props.theme.text.header};
     --text-title-color: ${props => props.theme.text.title};
-    --text-sub-title-color: ${props => props.theme.text.main};
-
+    --text-sub-title-color: ${props => props.theme.text.subTitle};
   }
 
   * {
@@ -27,6 +28,5 @@ export default createGlobalStyle`
   body {
     background: ${props => props.theme.colors.background};
     font-size: 14px;
-    color: ${props => props.theme.colors.primary};
   }
 `;

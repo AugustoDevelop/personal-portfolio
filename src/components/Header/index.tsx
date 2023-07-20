@@ -1,70 +1,38 @@
-import React, { useContext } from 'react';
-import Toggle from 'react-toggle';
-import 'react-toggle/style.css';
-
-import { ThemeContext } from 'styled-components';
-import { Container } from './style';
-import { Link } from 'react-scroll'
-import { FaSun, FaMoon } from 'react-icons/fa';
-
+import React from 'react';
+import { menuItems } from '../../utils/NavMenuItens';
+import NavMenuItems from '../NavMenuItems';
+import { Nav } from './style';
+import { Link } from 'react-router-dom';
 import Logo from '../../assets/logo.png'
 
 interface Props {
-  toggleTheme(): void;
+  toggleTheme(themeValue: string): void;
 }
 
 const Header: React.FC<Props> = ({ toggleTheme }) => {
-  const { title } = useContext(ThemeContext) || {};
-  const menuItems = [
-    {
-      id: 1,
-      title: "home"
-    },
-    {
-      id: 2,
-      title: "about"
-    },
-    {
-      id: 3,
-      title: "portifolio"
-    },
-    {
-      id: 4,
-      title: "contact"
-    },    
-  ]
 
-  return (
-    <Container>
-      <Link to="/"><img id="logo-image" alt="Augusto Develop" src={Logo} style={{ height: "60px" }} /></Link>
-      <div>
-        <ul data-menu="list" id="menu">
-          {menuItems.map((menu) => (
-            <li key={menu.id} >
-              <Link 
-                to={menu.title} 
-                smooth={true} 
-                offset={-450} 
-                duration={500} 
-                delay={100}>
-                  {menu.title}
-              </Link>
-            </li>
-          ))}
-        </ul>
-
-        <Toggle
-          checked={title === 'dark'}
-          icons={{
-            checked: <FaMoon />,
-            unchecked: <FaSun />,
-          }}
-          onChange={toggleTheme}
-          className="custom-toggle"
-        />
-
-      </div>
-    </Container>
+ return (
+  <div>
+    <Link to="/">
+      <img id="logo-image" alt="Augusto Develop" src={Logo} style={{ height: '60px' }} />
+    </Link>    
+    <Nav>
+      <ul className="menus">
+        {menuItems.map((menu, index) => {
+          const depthLevel = 0;
+          return (
+            <NavMenuItems
+              items={menu}
+              key={index}
+              depthLevel={depthLevel}
+              toggleTheme={toggleTheme}
+            />
+          );
+        })}
+      </ul>
+    </Nav>
+  </div>
+  
   );
 };
 

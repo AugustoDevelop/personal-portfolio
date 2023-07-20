@@ -21,8 +21,18 @@ export const Container = styled.div`
   }
 
   li {
-    display: inline;
     margin-right: 15px;
+  }
+
+  .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    z-index: 1;
+  }
+
+  .submenu.visible {
+    display: block;
   }
 
   a {
@@ -62,6 +72,17 @@ export const Container = styled.div`
     text-transform: capitalize;
     cursor: pointer;
   }
+`;
+
+export const Nav = styled.nav`
+.menus {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+z-index: 10;
 `;
 
 

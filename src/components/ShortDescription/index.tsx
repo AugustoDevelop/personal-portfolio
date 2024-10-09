@@ -8,7 +8,6 @@ const ShortDescription = () => {
   const { t } = useTranslation();
 
   return (
-    <>
     <ContainerAll>
       <ContainerShortDesc>
         <ContainerTitle>
@@ -16,21 +15,17 @@ const ShortDescription = () => {
           <TitleH2>{t("descritionJob")}</TitleH2>
           <TitleH3>{t("experienceSummary1")}</TitleH3>
           <br/>
-          <br/>
           <ContainerSocial>
             <SocialBtns/>
           </ContainerSocial>
         </ContainerTitle>
         <ContainerImg alt={t("altImg")} src={Logo}/>
       </ContainerShortDesc>
+
+      <ContainerCarroseul>
+        <Carrossel/>
+      </ContainerCarroseul>
     </ContainerAll>
-   
-    <ContainerCarroseul>
-      <Carrossel/>
-    </ContainerCarroseul>
-  
-    </>
-    
   );
 };
 

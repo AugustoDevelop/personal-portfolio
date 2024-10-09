@@ -8,12 +8,12 @@ export const menuItems = [
     url: '/about'
   },
   {
-    title: "portifolio",
-    url: '/'
+    title: "projects",
+    url: '/projects'
   },
   {
     title: "contact",
-    url: '/'
+    url: '/contact'
   },
   {
     title: "language",

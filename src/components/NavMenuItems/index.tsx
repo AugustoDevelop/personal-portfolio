@@ -140,11 +140,9 @@ const MenuItems: FC<MenuItemsProps> = ({ items, depthLevel, onClick, toggleTheme
             />
           </>
         ) : (
-          items.url ? ( // Verifica se items.url existe antes de renderizar Link
-            <Link to={items.url} onClick={() => {
-              handleMenuItemClick(items);
-            }}>{t(items.title)}</Link>
-          ) : null
+          <Link to={items.url ? items.url : "/"} onClick={() => {
+            handleMenuItemClick(items)
+          }}>{t(items.title)}</Link>
         )}
       </li>
     </NavItems>

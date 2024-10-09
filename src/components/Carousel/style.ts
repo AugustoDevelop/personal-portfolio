@@ -33,5 +33,4 @@ export const CarouselText = styled.span`
 export const H2Text = styled.h2`
   color: var(--text-sub-title-color);
   margin-bottom: 2%;
-  
 `;

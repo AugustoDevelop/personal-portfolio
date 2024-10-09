@@ -6,9 +6,6 @@ import { useTranslation } from 'react-i18next';
 
 const ShortDescription = () => {
   const { t } = useTranslation();
-  const currentDate = new Date();
-  const referenceDate = new Date("2019-06-01");
-  const diffInYears = currentDate.getFullYear() - referenceDate.getFullYear();
 
   return (
     <>

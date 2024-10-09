@@ -12,77 +12,42 @@ export const Container = styled.div`
   justify-content: space-between;
   padding: 0 30px;
   z-index: 1;
-  
-  ul {
-    list-style-type: none;
-    margin-right: 15px;
-    padding: 0;
-    overflow: hidden;
-  }
 
-  li {
-    margin-right: 15px;
-  }
-
-  .submenu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    z-index: 1;
-  }
-
-  .submenu.visible {
-    display: block;
-  }
-
-  a {
-    text-decoration: none;
-    color: var(--text-header);
-  }
-  
-  div{
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .react-toggle-track {
-    background-color: var(---color-switch) !important;
-  }
-
-  .react-toggle-track-x {
-    padding-bottom: 17px;
-  }
-
-  .react-toggle-track {
-    & .react-toggle-track-check {
-      & svg {
-        color: var(--bg-header);
-      }
-    }
-
-    & .react-toggle-track-x{
-      & svg {
-        color: var(--bg-header);
-      }
-    }
-  } 
-
-  #menu {
+  .menu {
     display: inline-flex;
     text-transform: capitalize;
     cursor: pointer;
   }
+
+  .logo{
+    font-family: 'Saira Stencil One', cursive;
+    
+    text-decoration: none;
+
+    h1, span {
+      font-size: 2rem !important;
+    }
+
+    span {
+      color: var(--color-switch);
+    }
+
+    h1 {
+      color: var(--text-header);
+    }
+  }
+  
+
 `;
 
 export const Nav = styled.nav`
-.menus {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  list-style: none;
-}
+  .menus {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style: none;
+  }
 
-z-index: 10;
+  z-index: 10;
 `;
-
 

@@ -12,6 +12,7 @@ import light from './styles/themes/light';
 import usePersistedState from './utils/usePersistedState'
 import Header from './components/Header';
 import MainComponent from './components/MainComponent';
+import About from './pages/About/About';
 
 function App() {
   const [theme, setTheme] = usePersistedState<DefaultTheme>('theme', light);
@@ -29,6 +30,7 @@ function App() {
         </div>
         <Routes>
           <Route element={<MainComponent />} path="/" />
+          <Route element={<About />} path="/about" />
           {/* ... (outras rotas) */}
         </Routes>
       </BrowserRouter>

@@ -1,9 +1,9 @@
 export default {
   title: 'dark',
   colors: {
-    background: '#222',
+    background: '#1e1e1e',
     backgroundHeader: '#001C30',
-    switchColor: '#64CCC5',
+    switchColor: '#f97b22',
   },
   text: {
     header: '#DAFFFB',

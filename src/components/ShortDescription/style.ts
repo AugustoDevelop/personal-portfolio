@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ContainerAll = styled.div`
-  padding: 8% 0;
+  
 `;
 
 export const ContainerShortDesc = styled.div`
@@ -11,6 +11,8 @@ export const ContainerShortDesc = styled.div`
   text-align: center;
   margin: 0 auto;
   gap: 10%;
+  height: 100vh;
+  width: 100vw;
 `;
 
 export const ContainerTitle = styled.div`
@@ -26,14 +28,15 @@ export const ContainerSocial = styled.div`
 export const ContainerImg = styled.img`
   border-radius: 100%;
   border: 2px solid red;
-  height: 40vh;
-  width: 20vw;
-  object-fit: 'cover';
+  height: auto;
+  width: 100%;
+  max-width: 300px;
+  object-fit: cover;
 `;
 
 export const TitleH1 = styled.h1`
   font-weight: 600;
-  font-size: 36px;
+  font-size: 34px;
   line-height: 54px;
   color: var(--text-title-color);
 `;

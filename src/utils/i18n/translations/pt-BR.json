@@ -1,0 +1,21 @@
+{
+    "translation": {
+      "textCarousel": "Algumas tecnologias, linguagens e frameworks que tenho habilidade",
+      "textHi": "Olá! Sou Augusto Daniel! 👋",
+      "descritionJob": "",
+      "experienceSummary1": "Desenvolvedor Full Stack com experiência em Typescript, Kotlin e Spring Boot e alguns frameworks como React, Next.js e Angular versões 4, 5 e 14 e testes unitários como Junit e Jest. Além disso, sou certificado pela Aws.",
+      "altImg": "Foto Augusto",
+      "home": "inicio",
+      "about": "sobre",
+      "portifolio": "projetos",
+      "contact": "contato",
+      "language": "idioma",
+      "theme": "tema",
+      "portugueses": "português",
+      "english": "inglês",
+      "spanish": "espanhol",
+      "light": "claro",
+      "dark": "escuro"
+    }
+  }
+  

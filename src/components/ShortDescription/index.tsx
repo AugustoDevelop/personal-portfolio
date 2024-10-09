@@ -11,21 +11,29 @@ const ShortDescription = () => {
   const diffInYears = currentDate.getFullYear() - referenceDate.getFullYear();
 
   return (
+    <>
     <ContainerAll>
       <ContainerShortDesc>
         <ContainerTitle>
           <TitleH1>{t("textHi")}</TitleH1>
           <TitleH2>{t("descritionJob")}</TitleH2>
-          <TitleH3>{t("experienceSummary1")} {diffInYears} {t("experienceSummary2")}</TitleH3>
-          <ContainerSocial><SocialBtns/></ContainerSocial>
+          <TitleH3>{t("experienceSummary1")}</TitleH3>
+          <br/>
+          <br/>
+          <ContainerSocial>
+            <SocialBtns/>
+          </ContainerSocial>
         </ContainerTitle>
         <ContainerImg alt={t("altImg")} src={Logo}/>
       </ContainerShortDesc>
-    
-      <ContainerCarroseul>
-        <Carrossel/>
-      </ContainerCarroseul>
     </ContainerAll>
+   
+    <ContainerCarroseul>
+      <Carrossel/>
+    </ContainerCarroseul>
+  
+    </>
+    
   );
 };
 

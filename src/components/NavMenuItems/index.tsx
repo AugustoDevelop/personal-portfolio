@@ -4,6 +4,7 @@ import i18next from 'i18next';
 
 import Dropdown from '../NavDropdown';
 import { NavItems } from './style';
+import { useTranslation } from 'react-i18next';
 
 export interface SubMenuItem {
   type: string;
@@ -27,8 +28,14 @@ interface MenuItemsProps {
 const MenuItems: FC<MenuItemsProps> = ({ items, depthLevel, onClick, toggleTheme }) => {
   const [dropdown, setDropdown] = useState<boolean>(false);
   let ref = useRef<HTMLLIElement>(null);
+  const { t } = useTranslation();
 
   useEffect(() => {
+    const savedLanguage = sessionStorage.getItem('selectedLanguage');
+    if (savedLanguage) {
+      i18next.changeLanguage(savedLanguage);
+    }
+
     const handler = (event: MouseEvent | TouchEvent) => {
       if (dropdown && ref.current && !ref.current.contains(event.target as Node)) {
         setDropdown(false);
@@ -37,10 +44,11 @@ const MenuItems: FC<MenuItemsProps> = ({ items, depthLevel, onClick, toggleTheme
     document.addEventListener('mousedown', handler);
     document.addEventListener('touchstart', handler);
     return () => {
-      // Cleanup the event listener
       document.removeEventListener('mousedown', handler);
       document.removeEventListener('touchstart', handler);
     };
+
+
   }, [dropdown]);
 
   const onMouseEnter = () => {
@@ -57,9 +65,12 @@ const MenuItems: FC<MenuItemsProps> = ({ items, depthLevel, onClick, toggleTheme
   
   const handleMenuItemClick = (value: any) => {
     if (value.type === 'language') {
-      i18next.changeLanguage(value.value);
+      i18next.changeLanguage(value.value).then(() => {  
+        sessionStorage.setItem('selectedLanguage', value.value);
+        window.location.reload()
+      })
+
     } else if (value.type === 'theme') {
-      console.log("so faltao tu", value.value);
       toggleTheme(value.value);
     }
 
@@ -85,11 +96,9 @@ const MenuItems: FC<MenuItemsProps> = ({ items, depthLevel, onClick, toggleTheme
               onClick={() => setDropdown((prev) => !prev)}
             >
               {window.innerWidth < 960 && depthLevel === 0 ? (
-                items.title
+                t(items.title)
               ) : (
-                <Link to={items.url} onClick={() => {
-                  console.log("on que sera qu etme aqui", items.submenu);
-                }}>{items.title}</Link>
+                <Link to={items.url} >{t(items.title)}</Link>
               )}
 
               {depthLevel > 0 && window.innerWidth < 960 ? null : depthLevel > 0 && window.innerWidth > 960 ? (
@@ -115,7 +124,7 @@ const MenuItems: FC<MenuItemsProps> = ({ items, depthLevel, onClick, toggleTheme
               aria-expanded={dropdown ? 'true' : 'false'}
               onClick={() => setDropdown((prev) => !prev)}
             >
-              {items.title}{' '}
+              {t(items.title)}{' '}
               {depthLevel > 0 ? (
                 <span>&raquo;</span>
               ) : (
@@ -131,9 +140,9 @@ const MenuItems: FC<MenuItemsProps> = ({ items, depthLevel, onClick, toggleTheme
             />
           </>
         ) : (
-          <Link to="/" onClick={() => {
+          <Link to={items.url} onClick={() => {
             handleMenuItemClick(items)
-          }}>{items.title}</Link>
+          }}>{t(items.title)}</Link>
         )}
       </li>
     </NavItems>

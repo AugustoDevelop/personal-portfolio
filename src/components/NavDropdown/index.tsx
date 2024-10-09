@@ -15,14 +15,12 @@ const NavDropdown: FC<NavDropdownProps> = ({ submenus, dropdown, depthLevel, onC
   const dropdownClass = depthLevel > 1 ? 'dropdown-submenu' : '';
 
   const handleSubmenuClick = (value: string) => {
-    onClick && onClick(value); // Call the onClick function if provided with the submenu value
+    onClick && onClick(value);
   };
 
   return (
     <NavDrop>
-      <ul
-        className={`dropdown ${dropdownClass} ${dropdown ? 'show' : ''}`}
-      >
+      <ul className={`dropdown ${dropdownClass} ${dropdown ? 'show' : ''}`} >
         {submenus.map((submenu, index) => (
           <NavMenuItems
             items={submenu}

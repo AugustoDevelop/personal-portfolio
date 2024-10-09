@@ -11,9 +11,7 @@ import Git from "../../assets/icons/Git.svg";
 import Html5 from "../../assets/icons/Html5.svg";
 import Java from "../../assets/icons/Java.svg";
 import JavaScript from "../../assets/icons/Javascript.svg";
-import Jenkins from "../../assets/icons/Jenkins.svg";
 import Kotlin from "../../assets/icons/Kotlin.svg";
-import Mongo from "../../assets/icons/Mongodb.svg";
 import Next from "../../assets/icons/Nextdotjs.svg";
 import NextDark from "../../assets/icons/Nextdotjs-dark.svg";
 import PostrgressSql from "../../assets/icons/PostgreSql.svg";
@@ -41,9 +39,7 @@ export default function Carrossel() {
     { icon: Html5, name: "HTML5" },
     { icon: Java, name: "Java" },
     { icon: JavaScript, name: "JavaScript" },
-    { icon: Jenkins, name: "Jenkins" },
     { icon: Kotlin, name: "Kotlin" },
-    { icon: Mongo, name: "MongoDB" },
     { icon: nextIcon, name: "Next.js" },
     { icon: PostrgressSql, name: "Postrgress" },
     { icon: ReactLogo, name: "React" },
@@ -54,7 +50,7 @@ export default function Carrossel() {
   const settings = {
     dots: false,
     infinite: true,
-    slidesToShow: 13,
+    slidesToShow: 11,
     slidesToScroll: 1,
     autoplay: true,
     speed: 3000,

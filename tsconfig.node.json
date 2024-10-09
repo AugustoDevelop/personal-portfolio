@@ -3,8 +3,18 @@
     "composite": true,
     "skipLibCheck": true,
     "module": "ESNext",
+    "outDir": "./dist",
     "moduleResolution": "bundler",
     "allowSyntheticDefaultImports": true
   },
-  "include": ["vite.config.ts"]
+  "include": [
+    "src/**/*.ts",       // Inclui todos os arquivos TypeScript da pasta 'src'
+    "./vite-env.d.ts",
+    "src/utils/i18n/translations/en-US.json",
+    "src/utils/i18n/translations/pt-BR.json",
+    "src/utils/i18n/translations/es-ES.json",
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

@@ -5,7 +5,7 @@ export const menuItems = [
   },
   {
     title: "about",
-    url: '/'
+    url: '/about'
   },
   {
     title: "portifolio",
@@ -18,9 +18,9 @@ export const menuItems = [
   {
     title: "language",
     submenu: [
-      { type: "language", title: "Portugueses", value: "ptBR" },
-      { type: "language", title: "English", value: "en" },
-      { type: "language", title: "Spanish", value: "ptBR" },
+      { type: "language", title: "english", value: "enUS" },
+      { type: "language", title: "spanish", value: "esES" },
+      { type: "language", title: "portugueses", value: "ptBR" },
     ]
   },
   {

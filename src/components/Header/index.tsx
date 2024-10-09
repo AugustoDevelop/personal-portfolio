@@ -1,7 +1,7 @@
 import React from 'react';
 import { menuItems } from '../../utils/NavMenuItens';
 import NavMenuItems from '../NavMenuItems';
-import { Nav } from './style';
+import { Nav, Container } from './style';
 import { Link } from 'react-router-dom';
 import Logo from '../../assets/logo.png'
 
@@ -12,12 +12,12 @@ interface Props {
 const Header: React.FC<Props> = ({ toggleTheme }) => {
 
  return (
-  <div>
-    <Link to="/">
-      <img id="logo-image" alt="Augusto Develop" src={Logo} style={{ height: '60px' }} />
+  <Container>
+    <Link to="/" className="logo">
+      <h1>AUGUSTO<span>SOUZA</span></h1>
     </Link>    
     <Nav>
-      <ul className="menus">
+      <ul className="menus menu">
         {menuItems.map((menu, index) => {
           const depthLevel = 0;
           return (
@@ -31,7 +31,7 @@ const Header: React.FC<Props> = ({ toggleTheme }) => {
         })}
       </ul>
     </Nav>
-  </div>
+  </Container>
   
   );
 };

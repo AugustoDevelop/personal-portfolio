@@ -12,7 +12,7 @@ export const NavDrop = styled.nav`
     min-width: 10rem;
     padding: 0.5rem 0;
     list-style: none;
-    background-color: #fff;
+    background: var(--bg-header);
     border-radius: 0.5rem;
     display: none;
 }

@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const NavItems = styled.nav`
-  
   .menu-items {
     position: relative;
     font-size: 14px;
@@ -24,6 +23,10 @@ export const NavItems = styled.nav`
     cursor: pointer;
     width: 100%;
   }
+
+  button {
+    text-transform: capitalize;
+  }
   
   button span {
     margin-left: 3px;
@@ -36,7 +39,7 @@ export const NavItems = styled.nav`
   
   .menu-items a:hover,
   .menu-items button:hover {
-    background-color: #f2f2f2;
+    border-bottom: 2px solid var(--color-switch);
   }
   
   .arrow::after {

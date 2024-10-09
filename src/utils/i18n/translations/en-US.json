@@ -1,0 +1,21 @@
+{
+    "translation": {
+      "textCarousel": "Some technologies, languages, and frameworks I know",
+      "textHi": "Hi! I´m Augusto Daniel! 👋",
+      "descritionJob": "",
+      "experienceSummary1": "Full Stack Developer with experience in Typescript, Kotlin and Spring Boot and some frameworks such as React, Next.js and Angular versions 4, 5 and 14 and unit tests such as Junit and Jest. Additionally, I am Aws certified.",
+      "altImg": "Photo Augusto",
+      "home": "home",
+      "about": "about",
+      "portifolio": "projects",
+      "contact": "contact",
+      "language": "language",
+      "theme": "theme",
+      "portugueses": "portugueses",
+      "english": "english",
+      "spanish": "spanish",
+      "light": "light",
+      "dark": "dark"
+    }
+  }
+  

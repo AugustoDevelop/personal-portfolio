@@ -1,17 +1,20 @@
 import i18next from "i18next";
 import { initReactI18next } from "react-i18next";
-import ptJson from './translations/ptBR.json';
-import enJson from './translations/enUS.json';
+import ptJson from './translations/pt-BR.json';
+import enJson from './translations/en-US.json';
+import esJson from './translations/es-ES.json';
 
 
 i18next.use(initReactI18next).init({
-    fallbackLng: "en",
+    fallbackLng: "enUS",
+    lng: 'enUS',
     interpolation: {
         escapeValue: false
     },
     resources: {
-        en: enJson,
-        ptBR: ptJson
+        enUS: enJson,
+        ptBR: ptJson,
+        esES: esJson
     }
 })
 

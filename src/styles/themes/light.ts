@@ -3,7 +3,7 @@ export default {
   colors: {
     background: '#fff',
     backgroundHeader: '#10485B',
-    switchColor: '#64CCC5',
+    switchColor: '#f97b22',
   },
   text: {
     header: '#DAFFFB',

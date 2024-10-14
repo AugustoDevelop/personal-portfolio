@@ -5,7 +5,7 @@
   "type": "module",
   "description": "Portifolio de Augusto Daniel",
   "keywords": [],
-  "author": "Augusto Daniel",
+  "author": "Augusto-Daniel",
   "scripts": {
     "dev": "vite",
     "build": "rm -rf dist node_modules package-lock.json && yarn && tsc && vite build",

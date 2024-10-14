@@ -11,8 +11,8 @@ export const ContainerShortDesc = styled.div`
   text-align: center;
   margin: 0 auto;
   gap: 10%;
-  height: 100vh;
   width: 100vw;
+  margin-bottom: 7%;
 `;
 
 export const ContainerTitle = styled.div`
@@ -60,6 +60,5 @@ export const TitleH3 = styled.p`
 `;
 
 export const ContainerCarroseul = styled.div`
-  margin-top: 5%;
   text-align: center;
 `;

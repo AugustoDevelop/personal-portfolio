@@ -15,6 +15,7 @@ import MainComponent from './components/MainComponent';
 import About from './pages/about/About';
 import Projects from './pages/projects/Projects';
 import Contact from './pages/contact/Contact';
+import PolicyCookies from './pages/policy/policyCookies';
 
 function App() {
   const [theme, setTheme] = usePersistedState<DefaultTheme>('theme', light);
@@ -35,6 +36,7 @@ function App() {
           <Route element={<About />} path="/about" />
           <Route element={<Projects />} path="/projects" />
           <Route element={<Contact />} path="/contact" />
+          <Route element={<PolicyCookies />} path="/policy" />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

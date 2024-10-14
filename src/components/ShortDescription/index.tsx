@@ -3,12 +3,14 @@ import { ContainerAll, ContainerSocial, ContainerShortDesc, ContainerTitle, Cont
 import { SocialBtns } from '../SocialBtns';
 import Carrossel from '../Carousel';
 import { useTranslation } from 'react-i18next';
+import CookieBanner from '../Cookies/CookiesMessage';
 
 const ShortDescription = () => {
   const { t } = useTranslation();
 
   return (
-    <ContainerAll>
+    <>
+      <ContainerAll>
       <ContainerShortDesc>
         <ContainerTitle>
           <TitleH1>{t("textHi")}</TitleH1>
@@ -26,6 +28,12 @@ const ShortDescription = () => {
         <Carrossel/>
       </ContainerCarroseul>
     </ContainerAll>
+    
+    <footer>
+      <CookieBanner />  
+    </footer>
+    </>
+  
   );
 };
 

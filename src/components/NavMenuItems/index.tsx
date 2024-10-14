@@ -67,7 +67,6 @@ const MenuItems: FC<MenuItemsProps> = ({ items, depthLevel, onClick, toggleTheme
     if (value.type === 'language') {
       i18next.changeLanguage(value.value).then(() => {  
         sessionStorage.setItem('selectedLanguage', value.value);
-        window.location.reload()
       })
 
     } else if (value.type === 'theme') {

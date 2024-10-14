@@ -8,14 +8,29 @@
       "home": "inicio",
       "about": "acerca de",
       "portifolio": "proyectos",
-      "contact": "contacto",
+      "contact": "Contacto",
       "language": "idioma",
       "theme": "tema",
       "portugueses": "portugues",
       "english": "inglesa",
       "spanish": "española",
       "light": "ligera",
-      "dark": "oscuro"
+      "dark": "oscuro",
+      "titleCookies": "Política de cookies",
+      "messageCookies": "Al hacer clic en “Aceptar”, acepta el almacenamiento de cookies en su dispositivo para mejorar la navegación del sitio y analizar el uso del mismo. Consulte nuestra Política de privacidad para obtener más información. ",
+      "btnAccept": "Aceptar",
+      "btnReject": "Rechazar",
+      "titlePolicy": "Política de privacidad",
+      "intoCookies": "Respetamos su privacidad y nos comprometemos a proteger su información personal. Esta Política de privacidad de cookies describe cómo nuestra página de inicio de cartera utiliza cookies y otras tecnologías similares para mejorar su experiencia al navegar por nuestro sitio web.",
+      "subCookies": "¿Qué son las cookies?",
+      "cookiesDetails": "Las cookies son pequeños archivos de texto que se almacenan en su dispositivo cuando visita nuestro sitio web. Desempeñan un papel clave en la funcionalidad de la página, ayudando a recordar sus preferencias como el idioma y el diseño y mejorando la navegación. Con esto, brindamos una experiencia más personalizada y eficiente para usted.",
+      "usedCookies": "Uso de cookies",
+      "useDetaislCookies": "Nuestra aplicación utiliza cookies para almacenar cierta información temporal durante su sesión. Estos datos se utilizan exclusivamente para facilitar la navegación y mejorar la funcionalidad del servicio. Es importante resaltar que no recopilamos ni almacenamos información sensible, como datos financieros o de identificación personal, garantizando así su privacidad y seguridad.",
+      "cookiesSessions": "Cookies de sesión",
+      "cookiesSessionsDetail": "Las cookies que utilizamos son predominantemente cookies de sesión, lo que significa que son temporales y caducan una vez que cierra su navegador. Estas cookies nos ayudan a recordar tus preferencias y configuraciones durante tu visita, brindándote una experiencia más fluida y adaptada a tus necesidades. Al utilizar nuestra página, podrá disfrutar de un entorno más intuitivo y responsivo.",
+      "consent": "Consentir",
+      "consentDetail" : "Al utilizar nuestra aplicación, usted acepta el uso de cookies como se describe en esta política. Eres libre de administrar tus preferencias de cookies directamente en la configuración de tu navegador. Si no desea aceptar cookies, puede desactivarlas; sin embargo, esto puede afectar negativamente su experiencia en nuestro sitio web al limitar algunas funciones. Si tiene alguna pregunta o inquietud sobre nuestra Política de Privacidad de Cookies, no dude en contactarnos.",
+      "contactDetails": "Si tiene preguntas o inquietudes sobre esta Política de privacidad de cookies, comuníquese con nosotros mediante el formulario disponible en nuestra página de contacto. Esta política fue creada con el objetivo de garantizar la transparencia sobre el uso de cookies en nuestra aplicación, respetando las mejores prácticas en privacidad y protección de datos. Su confianza es fundamental para nosotros y estamos aquí para garantizar que su experiencia sea segura y satisfactoria."
     }
   }
   

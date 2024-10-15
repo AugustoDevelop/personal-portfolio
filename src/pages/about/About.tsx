@@ -4,7 +4,7 @@ function About() {
     <p>Olá! Sou um Desenvolvedor Full Stack com uma paixão inabalável por transformar ideias em soluções digitais robustas e inovadoras. Com uma sólida formação em tecnologia, trago uma ampla gama de habilidades que me permitem atuar em todas as camadas do desenvolvimento de software, desde a concepção até a entrega final.</p>
     
     <h1>Minha Trajetória</h1>
-    <p>niciei minha jornada no mundo da programação com uma curiosidade insaciável e um desejo de entender como as coisas funcionam. Desde então, evoluí para um profissional versátil, dominando várias tecnologias que me permitem criar aplicações escaláveis e eficientes. Sou especializado em:
+    <p>Iniciei minha jornada no mundo da programação com uma curiosidade insaciável e um desejo de entender como as coisas funcionam. Desde então, evoluí para um profissional versátil, dominando várias tecnologias que me permitem criar aplicações escaláveis e eficientes. Sou especializado em:
 Kotlin e Spring Boot: Criando backends robustos e escaláveis que atendem às necessidades dos usuários.
 JavaScript Frameworks: Com experiência em React, Next.js e Angular (versões 4, 5 e 14), desenvolvo interfaces dinâmicas e responsivas que proporcionam experiências excepcionais ao usuário.
 TypeScript: Utilizo TypeScript para garantir código mais seguro e fácil de manter, aumentando a produtividade da equipe.

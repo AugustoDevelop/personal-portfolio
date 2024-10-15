@@ -30,7 +30,11 @@
       "cookiesSessionsDetail": "The cookies we use are predominantly session cookies, meaning they are temporary and expire once you close your browser. These cookies help us remember your preferences and settings during your visit, providing a smoother experience tailored to your needs. When using our website, you can enjoy a more intuitive and responsive environment.",
       "consent": "Consent",
       "consentDetail": "By using our application, you consent to the use of cookies as described in this policy. You are free to manage your cookie preferences directly in your browser settings. If you do not wish to accept cookies, you can disable them; however, this may negatively impact your experience on our website by limiting some functionality. If you have any questions or concerns about our Cookie Privacy Policy, do not hesitate to contact us.",
-      "contactDetails": "If you have any questions or concerns about this Cookie Privacy Policy, please contact us using the form available on our contact page. This policy was created with the aim of ensuring transparency about the use of cookies in our application, respecting the best practices in privacy and data protection. Your trust is fundamental to us, and we are here to ensure that your experience is safe and satisfactory."
+      "contactDetails": "If you have any questions or concerns about this Cookie Privacy Policy, please contact us using the form available on our contact page. This policy was created with the aim of ensuring transparency about the use of cookies in our application, respecting the best practices in privacy and data protection. Your trust is fundamental to us, and we are here to ensure that your experience is safe and satisfactory.",
+      "github": "Github Profile",
+      "linkedin": "Linkedin Profile",
+      "curriculum": "Curriculum Vitae",
+      "email": "Send e-mail"
       
     }
   }

@@ -24,3 +24,13 @@ export const ContainerImg = styled.img`
   width: 150%;
   height: 150%;
 `;
+
+export const Message = styled.div`
+  color: var(--text-sub-title-color);
+  position: absolute;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 8px;
+  border-radius: 4px;
+  z-index: 2;
+`;

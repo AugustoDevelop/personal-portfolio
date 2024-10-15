@@ -30,7 +30,11 @@
       "cookiesSessionsDetail": "Las cookies que utilizamos son predominantemente cookies de sesión, lo que significa que son temporales y caducan una vez que cierra su navegador. Estas cookies nos ayudan a recordar tus preferencias y configuraciones durante tu visita, brindándote una experiencia más fluida y adaptada a tus necesidades. Al utilizar nuestra página, podrá disfrutar de un entorno más intuitivo y responsivo.",
       "consent": "Consentir",
       "consentDetail" : "Al utilizar nuestra aplicación, usted acepta el uso de cookies como se describe en esta política. Eres libre de administrar tus preferencias de cookies directamente en la configuración de tu navegador. Si no desea aceptar cookies, puede desactivarlas; sin embargo, esto puede afectar negativamente su experiencia en nuestro sitio web al limitar algunas funciones. Si tiene alguna pregunta o inquietud sobre nuestra Política de Privacidad de Cookies, no dude en contactarnos.",
-      "contactDetails": "Si tiene preguntas o inquietudes sobre esta Política de privacidad de cookies, comuníquese con nosotros mediante el formulario disponible en nuestra página de contacto. Esta política fue creada con el objetivo de garantizar la transparencia sobre el uso de cookies en nuestra aplicación, respetando las mejores prácticas en privacidad y protección de datos. Su confianza es fundamental para nosotros y estamos aquí para garantizar que su experiencia sea segura y satisfactoria."
+      "contactDetails": "Si tiene preguntas o inquietudes sobre esta Política de privacidad de cookies, comuníquese con nosotros mediante el formulario disponible en nuestra página de contacto. Esta política fue creada con el objetivo de garantizar la transparencia sobre el uso de cookies en nuestra aplicación, respetando las mejores prácticas en privacidad y protección de datos. Su confianza es fundamental para nosotros y estamos aquí para garantizar que su experiencia sea segura y satisfactoria.",
+      "github": "Perfil de Github",
+      "linkedin": "Perfil de Linkedin",
+      "curriculum": "Curriculum vitae",
+      "email": "Enviar correo electrónico"
     }
   }
   

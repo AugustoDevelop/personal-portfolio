@@ -33,7 +33,3 @@ export const Message = styled.div`
   border-radius: 4px;
   z-index: 2;
 `;
-
-export const ColumnDiv = styled.div `
-
-`;

@@ -1,4 +1,4 @@
-import { Container, ContainerA, ContainerImg, Message, ColumnDiv } from './style';
+import { Container, ContainerA, ContainerImg, Message } from './style';
 import GitHubIcon from "../../assets/icons/svg/Github.svg";
 import GitHubIconDark from "../../assets/icons/svg/GithubDark.svg";
 import LinkedInIcon from "../../assets/icons/svg/Linkedin.svg";

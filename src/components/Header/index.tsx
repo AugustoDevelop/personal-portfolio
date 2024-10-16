@@ -1,5 +1,5 @@
 import React from 'react';
-import { menuItems } from '../../utils/NavMenuItens';
+import { menuItems } from '../../interfaces/NavMenuItens';
 import NavMenuItems from '../NavMenuItems';
 import { Nav, Container } from './style';
 import { Link } from 'react-router-dom';

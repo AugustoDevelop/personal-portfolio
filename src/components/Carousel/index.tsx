@@ -18,6 +18,12 @@ import PostrgressSql from "../../assets/icons/svg/PostgreSql.svg";
 import ReactLogo from "../../assets/icons/svg/React.svg";
 import SpringBoot from "../../assets/icons/svg/SpringBoot.svg";
 import TypeScript from "../../assets/icons/svg/Typescript.svg";
+import Aws from "../../assets/icons/svg/Aws.svg";
+import AwsDark from "../../assets/icons/svg/AwsDark.svg";
+import Sonarqube from "../../assets/icons/svg/Sonarqube.svg";
+import SonarqubeDark from "../../assets/icons/svg/SonarqubeDark.svg";
+import Kafka from "../../assets/icons/svg/Kafka.svg";
+import KafkaDark from "../../assets/icons/svg/KafkaDark.svg";
 import Slider from "react-slick";
 import { useContext } from "react";
 import { ThemeContext } from 'styled-components';
@@ -30,6 +36,9 @@ export default function Carrossel() {
   const { title } = useContext(ThemeContext) || {};
 
   const nextIcon = title === "dark" ? NextDark : Next;
+  const awsIcon = title === "dark" ? AwsDark : Aws;
+  const sonarqubeIcon = title === "dark" ? SonarqubeDark : Sonarqube;
+  const kafkaIcon = title === "dark" ? KafkaDark : Kafka;
 
   const carouselItems = [
     { icon: Angular, name: "Angular" },
@@ -42,14 +51,17 @@ export default function Carrossel() {
     { icon: nextIcon, name: "Next.js" },
     { icon: PostrgressSql, name: "Postrgress" },
     { icon: ReactLogo, name: "React" },
-    { icon: SpringBoot, name: "Spring Boot" },
-    { icon: TypeScript, name: "TypeScript" }
+    { icon: SpringBoot, name: "Spring Boot" },  
+    { icon: TypeScript, name: "TypeScript" },
+    { icon: awsIcon, name: "AWS" },
+    { icon: sonarqubeIcon , name: "Sonarqube" },
+    { icon: kafkaIcon , name: "Kafka" },
   ];
 
   const settings = {
     dots: false,
     infinite: true,
-    slidesToShow: 11,
+    slidesToShow: 14,
     slidesToScroll: 1,
     autoplay: true,
     speed: 3000,

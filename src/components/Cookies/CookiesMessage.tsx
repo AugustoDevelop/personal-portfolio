@@ -36,20 +36,19 @@ const CookiesMessage : React.FC = () => {
           top: `${show ? "100vh" : "calc(100vh - var(--footer-height))"}`,
           transition: "top 2s",
         }}
-        buttonStyle={{ color: "var(--text-heade)", fontSize: "13px", borderRadius: "5px",  background: "#4CAF50"}}
-        declineButtonStyle={{ fontSize: "13px", borderRadius: "5px" }} 
+        buttonStyle={{ color: "var(--text-heade)", fontSize: "13px", borderRadius: "5px", padding: "5px",  background: "#4CAF50", }}
+        declineButtonStyle={{ fontSize: "13px", borderRadius: "5px", fontWeight: "bold", padding: "5px" }} 
       >
         {t("messageCookies")}
         <Link
           to="/policy"
+          target="_blank"
           style={{
             textDecoration: "underline",
-            fontSize: "12px",
+            fontSize: "14px",
             color: "var(--color-switch)",
           }}
-        >
-          {" "}
-          {t("titleCookies")}
+        > {t("titleCookies")}
         </Link>
       </CookieConsent>
     </>

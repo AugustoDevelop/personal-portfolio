@@ -16,10 +16,11 @@ export function SocialBtns(){
   const emailIcon = title === "dark" ? EmailModeDark : Email;
   const [message, setMessage] = useState('');
   const [messagePosition, setMessagePosition] = useState({ top: 0, left: 0 });
+  
   const handleMouseEnter = (msg: string, event: React.MouseEvent<HTMLAnchorElement>) => {
     setMessage(msg);
     const { top, left } = event.currentTarget.getBoundingClientRect();
-    setMessagePosition({ top: top + 60, left: left });
+    setMessagePosition({ top: top + 60, left: left -30 });
   };
 
   const handleMouseLeave = () => {

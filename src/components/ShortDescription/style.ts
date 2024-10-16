@@ -1,7 +1,19 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-export const ContainerAll = styled.div`
+export const ContainerAll = styled.div``;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  font-size: 14px;
+  color: var(--text-sub-title-color);
+  border-bottom: 2px solid transparent;
+  margin-left: 20px;
+  text-transform: capitalize;
   
+  &:hover {
+    border-bottom: 2px solid var(--color-switch)
+  }
 `;
 
 export const ContainerShortDesc = styled.div`
@@ -41,17 +53,8 @@ export const TitleH1 = styled.h1`
   color: var(--text-title-color);
 `;
 
-export const TitleH2 = styled.h2`
-  font-style: italic;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 30px;
-  color: var(--text-sub-title-color);
-`;
-
 export const TitleH3 = styled.p`
   margin-top: 5%;
-  font-style: italic;
   font-weight: 400;
   font-size: 20px;
   line-height: 30px;
@@ -61,4 +64,9 @@ export const TitleH3 = styled.p`
 
 export const ContainerCarroseul = styled.div`
   text-align: center;
+`;
+
+export const Action = styled.div`
+  display: flex;
+  justify-content: space-around;
 `;

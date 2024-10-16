@@ -1,4 +1,4 @@
-import { Container, ContainerA, ContainerImg, Message } from './style';
+import { Container, ContainerA, ContainerImg, Message, ColumnDiv } from './style';
 import GitHubIcon from "../../assets/icons/svg/Github.svg";
 import GitHubIconDark from "../../assets/icons/svg/GithubDark.svg";
 import LinkedInIcon from "../../assets/icons/svg/Linkedin.svg";
@@ -27,39 +27,39 @@ export function SocialBtns(){
   };
 
   return(
-    <Container>
-      <ContainerA  
-        href="https://drive.google.com/file/d/1Inv1ynx7WMP7hlLFyNf3DtchBPXYbnAJ/view?usp=sharing"
-        target="_blank"
-        onMouseEnter={(e) => handleMouseEnter(t("curriculum"), e)}
-        onMouseLeave={handleMouseLeave}>
-        <ContainerImg id='curriculum' src={Curriculum} alt="Curriculum Vitae"/>
-      </ContainerA>
+      <Container>
+        <ContainerA  
+          href="https://drive.google.com/file/d/1Inv1ynx7WMP7hlLFyNf3DtchBPXYbnAJ/view?usp=sharing"
+          target="_blank"
+          onMouseEnter={(e) => handleMouseEnter(t("curriculum"), e)}
+          onMouseLeave={handleMouseLeave}>
+          <ContainerImg id='curriculum' src={Curriculum} alt="Curriculum Vitae"/>
+        </ContainerA>
 
-      <ContainerA 
-        href="https://www.linkedin.com/in/augusto-souza-72a64b134/" 
-        target="_blank"
-        onMouseEnter={(e) => handleMouseEnter(t("linkedin"), e)}
-        onMouseLeave={handleMouseLeave}>
-        <ContainerImg src={LinkedInIcon} alt="Linkedin" />
-      </ContainerA>
+        <ContainerA 
+          href="https://www.linkedin.com/in/augusto-souza-72a64b134/" 
+          target="_blank"
+          onMouseEnter={(e) => handleMouseEnter(t("linkedin"), e)}
+          onMouseLeave={handleMouseLeave}>
+          <ContainerImg src={LinkedInIcon} alt="Linkedin" />
+        </ContainerA>
 
-      <ContainerA 
-        href="https://github.com/AugustoDevelop" 
-        target="_blank"
-        onMouseEnter={(e) => handleMouseEnter(t("github"), e)}
-        onMouseLeave={handleMouseLeave}>
-        <ContainerImg src={gitIcon} alt="Github"/>
-      </ContainerA>
+        <ContainerA 
+          href="https://github.com/AugustoDevelop" 
+          target="_blank"
+          onMouseEnter={(e) => handleMouseEnter(t("github"), e)}
+          onMouseLeave={handleMouseLeave}>
+          <ContainerImg src={gitIcon} alt="Github"/>
+        </ContainerA>
 
-      <ContainerA 
-        href="mailto:augustodanieltec@gmail.com"
-        target="_blank"
-        onMouseEnter={(e) => handleMouseEnter(t("email"), e)}
-        onMouseLeave={handleMouseLeave}>
-        <ContainerImg src={emailIcon} alt="Email"/>
-      </ContainerA>
-      {message && <Message style={{ top: messagePosition.top, left: messagePosition.left }}>{message}</Message>}
-    </Container>
+        <ContainerA 
+          href="mailto:augustodanieltec@gmail.com"
+          target="_blank"
+          onMouseEnter={(e) => handleMouseEnter(t("email"), e)}
+          onMouseLeave={handleMouseLeave}>
+          <ContainerImg src={emailIcon} alt="Email"/>
+        </ContainerA>
+        {message && <Message style={{ top: messagePosition.top, left: messagePosition.left }}>{message}</Message>}
+      </Container>
   )
 }

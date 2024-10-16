@@ -5,25 +5,7 @@ import i18next from 'i18next';
 import Dropdown from '../NavDropdown';
 import { NavItems } from './style';
 import { useTranslation } from 'react-i18next';
-
-export interface SubMenuItem {
-  type: string;
-  title: string;
-  value: string;
-}
-
-export interface MenuItem {
-  title: string;
-  url?: string;
-  submenu?: SubMenuItem[];
-}
-
-interface MenuItemsProps {
-  items: MenuItem;
-  depthLevel: number;
-  onClick?: (value: string) => void;
-  toggleTheme(themeValue: string): void;
-}
+import { MenuItemsProps } from '../../interfaces/MenuItemsPropsInterface';
 
 const MenuItems: FC<MenuItemsProps> = ({ items, depthLevel, onClick, toggleTheme }) => {
   const [dropdown, setDropdown] = useState<boolean>(false);

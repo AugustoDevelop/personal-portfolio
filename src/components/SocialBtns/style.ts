@@ -19,7 +19,6 @@ export const ContainerA = styled.a`
   justify-content: center;
 `;
 
-
 export const ContainerImg = styled.img`
   width: 150%;
   height: 150%;
@@ -33,4 +32,8 @@ export const Message = styled.div`
   padding: 8px;
   border-radius: 4px;
   z-index: 2;
+`;
+
+export const ColumnDiv = styled.div `
+
 `;

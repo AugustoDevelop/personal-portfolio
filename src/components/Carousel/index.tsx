@@ -22,7 +22,6 @@ import Slider from "react-slick";
 import { useContext } from "react";
 import { ThemeContext } from 'styled-components';
 import { useTranslation } from 'react-i18next';
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 

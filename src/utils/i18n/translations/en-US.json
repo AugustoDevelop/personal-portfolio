@@ -2,7 +2,7 @@
     "translation": {
       "textCarousel": "Some technologies, languages, and frameworks I know",
       "textHi": "Hi! I´m Augusto Daniel! 👋",
-      "descritionJob": "",
+      "descriptionJob": "",
       "experienceSummary1": "Full Stack Developer with experience in Typescript, Kotlin and Spring Boot and some frameworks such as React, Next.js and Angular versions 4, 5 and 14 and unit tests such as Junit and Jest. Additionally, I am Aws certified.",
       "altImg": "Photo Augusto",
       "home": "home",
@@ -25,7 +25,7 @@
       "subCookies": "What are Cookies?",
       "cookiesDetails": "Cookies are small text files that are stored on your device when you visit our website. They play a key role in the functionality of the website, helping to remember your preferences, such as language and layout, and improving navigation. This helps us provide you with a more personalized and efficient experience.",
       "usedCookies": "Use of Cookies",
-      "useDetaislCookies": "Our application uses cookies to store some temporary information during your session. This data is used exclusively to facilitate navigation and improve the functionality of the service. It is important to note that we do not collect or store sensitive information, such as financial or personally identifiable data, thus ensuring your privacy and security.",
+      "useDetailsCookies": "Our application uses cookies to store some temporary information during your session. This data is used exclusively to facilitate navigation and improve the functionality of the service. It is important to note that we do not collect or store sensitive information, such as financial or personally identifiable data, thus ensuring your privacy and security.",
       "cookiesSessions": "Session Cookies",
       "cookiesSessionsDetail": "The cookies we use are predominantly session cookies, meaning they are temporary and expire once you close your browser. These cookies help us remember your preferences and settings during your visit, providing a smoother experience tailored to your needs. When using our website, you can enjoy a more intuitive and responsive environment.",
       "consent": "Consent",
@@ -34,7 +34,8 @@
       "github": "Github Profile",
       "linkedin": "Linkedin Profile",
       "curriculum": "Curriculum Vitae",
-      "email": "Send e-mail"
+      "email": "Send e-mail",
+      "moreContacts": "More Contacts"
       
     }
   }

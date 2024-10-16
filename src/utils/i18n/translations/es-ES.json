@@ -2,7 +2,7 @@
     "translation": {
       "textCarousel": "Algunas tecnologías, lenguajes y frameworks que conozco",
       "textHi": "¡Hola! Sou Augusto Daniel 👋",
-      "descritionJob": "",
+      "descriptionJob": "",
       "experienceSummary1": "Desarrollador Full Stack con experiencia en Typescript, Kotlin y Spring Boot y algunos frameworks como React, Next.js y Angular versiones 4, 5 y 14 y pruebas unitarias como Junit y Jest. Además, tengo la certificación Aws.",
       "altImg": "Foto Augusto",
       "home": "inicio",
@@ -25,7 +25,7 @@
       "subCookies": "¿Qué son las cookies?",
       "cookiesDetails": "Las cookies son pequeños archivos de texto que se almacenan en su dispositivo cuando visita nuestro sitio web. Desempeñan un papel clave en la funcionalidad de la página, ayudando a recordar sus preferencias como el idioma y el diseño y mejorando la navegación. Con esto, brindamos una experiencia más personalizada y eficiente para usted.",
       "usedCookies": "Uso de cookies",
-      "useDetaislCookies": "Nuestra aplicación utiliza cookies para almacenar cierta información temporal durante su sesión. Estos datos se utilizan exclusivamente para facilitar la navegación y mejorar la funcionalidad del servicio. Es importante resaltar que no recopilamos ni almacenamos información sensible, como datos financieros o de identificación personal, garantizando así su privacidad y seguridad.",
+      "useDetailsCookies": "Nuestra aplicación utiliza cookies para almacenar cierta información temporal durante su sesión. Estos datos se utilizan exclusivamente para facilitar la navegación y mejorar la funcionalidad del servicio. Es importante resaltar que no recopilamos ni almacenamos información sensible, como datos financieros o de identificación personal, garantizando así su privacidad y seguridad.",
       "cookiesSessions": "Cookies de sesión",
       "cookiesSessionsDetail": "Las cookies que utilizamos son predominantemente cookies de sesión, lo que significa que son temporales y caducan una vez que cierra su navegador. Estas cookies nos ayudan a recordar tus preferencias y configuraciones durante tu visita, brindándote una experiencia más fluida y adaptada a tus necesidades. Al utilizar nuestra página, podrá disfrutar de un entorno más intuitivo y responsivo.",
       "consent": "Consentir",
@@ -34,7 +34,8 @@
       "github": "Perfil de Github",
       "linkedin": "Perfil de Linkedin",
       "curriculum": "Curriculum vitae",
-      "email": "Enviar correo electrónico"
+      "email": "Enviar correo electrónico",
+      "moreContacts": "Más contactos"
     }
   }
   

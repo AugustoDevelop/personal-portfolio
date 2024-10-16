@@ -12,7 +12,7 @@ function PolicyCookies() {
     <h3>{t("cookiesDetails")}</h3><br /><br />
 
     <h2>{t("usedCookies")}</h2>
-    <h3>{t("useDetaislCookies")}</h3><br /><br />
+    <h3>{t("useDetailsCookies")}</h3><br /><br />
 
     <h2>{t("cookiesSessions")}</h2>
     <h3>{t("cookiesSessionsDetail")}</h3><br /><br />
@@ -20,7 +20,7 @@ function PolicyCookies() {
     <h2>{t("consent")}</h2>
     <h3>{t("consentDetail")}</h3><br /><br />
 
-    <h2>{t("conctact")}</h2>
+    <h2>{t("contact")}</h2>
     <h3>{t("contactDetails")}</h3><br /><br />
   </PolicyCookiesStyle>
 }

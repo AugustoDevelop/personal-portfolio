@@ -3,10 +3,7 @@ import { menuItems } from '../../utils/NavMenuItens';
 import NavMenuItems from '../NavMenuItems';
 import { Nav, Container } from './style';
 import { Link } from 'react-router-dom';
-
-interface Props {
-  toggleTheme(themeValue: string): void;
-}
+import { Props } from '../../interfaces/PropsInterface';
 
 const Header: React.FC<Props> = ({ toggleTheme }) => {
 

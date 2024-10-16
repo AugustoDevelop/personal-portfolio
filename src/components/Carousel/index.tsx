@@ -5,19 +5,19 @@ import {
   CarouselText, 
   H2Text 
 } from "./style";
-import Angular from "../../assets/icons/Angular.svg";
-import CSS3 from "../../assets/icons/Css3.svg";
-import Git from "../../assets/icons/Git.svg";
-import Html5 from "../../assets/icons/Html5.svg";
-import Java from "../../assets/icons/Java.svg";
-import JavaScript from "../../assets/icons/Javascript.svg";
-import Kotlin from "../../assets/icons/Kotlin.svg";
-import Next from "../../assets/icons/Nextdotjs.svg";
-import NextDark from "../../assets/icons/Nextdotjs-dark.svg";
-import PostrgressSql from "../../assets/icons/PostgreSql.svg";
-import ReactLogo from "../../assets/icons/React.svg";
-import SpringBoot from "../../assets/icons/SpringBoot.svg";
-import TypeScript from "../../assets/icons/Typescript.svg";
+import Angular from "../../assets/icons/svg/Angular.svg";
+import CSS3 from "../../assets/icons/svg/Css3.svg";
+import Git from "../../assets/icons/svg/Git.svg";
+import Html5 from "../../assets/icons/svg/Html5.svg";
+import Java from "../../assets/icons/svg/Java.svg";
+import JavaScript from "../../assets/icons/svg/Javascript.svg";
+import Kotlin from "../../assets/icons/svg/Kotlin.svg";
+import Next from "../../assets/icons/svg/Nextdotjs.svg";
+import NextDark from "../../assets/icons/svg/Nextdotjs-dark.svg";
+import PostrgressSql from "../../assets/icons/svg/PostgreSql.svg";
+import ReactLogo from "../../assets/icons/svg/React.svg";
+import SpringBoot from "../../assets/icons/svg/SpringBoot.svg";
+import TypeScript from "../../assets/icons/svg/Typescript.svg";
 import Slider from "react-slick";
 import { useContext } from "react";
 import { ThemeContext } from 'styled-components';

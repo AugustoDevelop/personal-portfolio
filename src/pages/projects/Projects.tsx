@@ -42,7 +42,7 @@ function Projects() {
 
   return (
     <ProjectsContainer>
-      <ProjectTitle>Projetos</ProjectTitle>
+      <ProjectTitle>Projetos:</ProjectTitle>
       <ProjectGrid>
         {repos.map(repo => (
           <ProjectCard key={repo.id}>

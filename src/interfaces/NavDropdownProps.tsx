@@ -1,4 +1,4 @@
-import { MenuItem } from "./MenuItemInterface";
+import { MenuItem } from "./MenuItemProps";
 
 export interface NavDropdownProps {
   submenus: MenuItem[];

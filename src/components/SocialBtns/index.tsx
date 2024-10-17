@@ -1,10 +1,10 @@
 import { Container, ContainerA, ContainerImg, Message } from './style';
-import GitHubIcon from "../../assets/icons/svg/Github.svg";
-import GitHubIconDark from "../../assets/icons/svg/GithubDark.svg";
-import LinkedInIcon from "../../assets/icons/svg/Linkedin.svg";
-import Curriculum from "../../assets/icons/svg/Curriculo.svg";
-import Email from "../../assets/icons/svg/Email.svg";
-import EmailModeDark from "../../assets/icons/svg/EmailModeDark.svg";
+import GitHubIcon from "../../assets/icons/Github.svg";
+import GitHubIconDark from "../../assets/icons/GithubDark.svg";
+import LinkedInIcon from "../../assets/icons/Linkedin.svg";
+import Curriculum from "../../assets/icons/Curriculo.svg";
+import Email from "../../assets/icons/Email.svg";
+import EmailModeDark from "../../assets/icons/EmailModeDark.svg";
 import { useContext, useState  } from 'react';
 import { ThemeContext } from 'styled-components';
 import { useTranslation } from 'react-i18next';

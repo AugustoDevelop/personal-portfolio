@@ -1,4 +1,4 @@
-import { SubMenuItem } from "./SubMenuItemInterface";
+import { SubMenuItem } from "./SubMenuItem";
 
 export interface MenuItem {
   title: string;

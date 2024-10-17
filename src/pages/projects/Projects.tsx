@@ -13,7 +13,7 @@ function Projects() {
     try {
       const response = await fetch('https://api.github.com/users/AugustoDevelop/repos',{
         headers: {
-          'Authorization': `Bearer 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`
+          'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`
         }
       });
       const data: GithubProps[] = await response.json();

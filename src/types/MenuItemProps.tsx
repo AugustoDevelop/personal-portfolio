@@ -1,6 +1,6 @@
 import { SubMenuItem } from "./SubMenuItem";
 
-export interface MenuItem {
+export type MenuItem = {
   title: string;
   url?: string;
   submenu?: SubMenuItem[];

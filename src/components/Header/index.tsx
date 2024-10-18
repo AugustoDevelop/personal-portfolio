@@ -1,11 +1,11 @@
 import React from 'react';
-import { menuItems } from '../../interfaces/NavMenuItemsProps';
+import { menuItems } from '../../types/NavMenuItemsProps';
 import NavMenuItems from '../NavMenuItems';
 import { Nav, Container } from './style';
 import { Link } from 'react-router-dom';
-import { Props } from '../../interfaces/Props';
+import { ThemeProps } from '../../types/ThemeProps';
 
-const Header: React.FC<Props> = ({ toggleTheme }) => {
+const Header: React.FC<ThemeProps> = ({ toggleTheme }) => {
 
  return (
   <Container>

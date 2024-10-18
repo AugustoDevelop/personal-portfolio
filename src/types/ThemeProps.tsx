@@ -1,3 +1,3 @@
-export interface Props {
+export type ThemeProps = {
   toggleTheme(themeValue: string): void;
 }

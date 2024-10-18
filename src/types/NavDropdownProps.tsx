@@ -1,6 +1,6 @@
 import { MenuItem } from "./MenuItemProps";
 
-export interface NavDropdownProps {
+export type NavDropdownProps = {
   submenus: MenuItem[];
   dropdown: boolean;
   depthLevel: number;

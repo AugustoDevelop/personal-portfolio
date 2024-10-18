@@ -1,6 +1,6 @@
 import { MenuItem } from "./MenuItemProps";
 
-export interface MenuItemsProps {
+export type MenuItemsProps = {
   items: MenuItem;
   depthLevel: number;
   onClick?: (value: string) => void;

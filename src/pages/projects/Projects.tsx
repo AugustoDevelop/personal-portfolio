@@ -11,9 +11,9 @@ function Projects() {
   
   const fetchProjects = async () => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_GITHUB_URL}`,{
+      const response = await fetch(`${import.meta.env.VITE_REACT_APP_GITHUB_URL}`,{
         headers: {
-          'Authorization': `Bearer ${process.env.REACT_APP_GITHUB_TOKEN}`,
+          'Authorization': `Bearer ${import.meta.env.VITE_REACT_APP_GITHUB_TOKEN}`,
            'Content-Type': 'application/json'
         }
       });

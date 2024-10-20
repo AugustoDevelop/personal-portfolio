@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { GithubProps } from '../../types/GithubProps';
+import { GithubProps } from '../../utils/types/GithubProps';
 import { 
   ProjectsContainer, ProjectTitle, ProjectGrid, ProjectCard, ProjectInfo, 
   ProjectName, ProjectDescription, TagsContainer, Tag, FooterLinks, 

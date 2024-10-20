@@ -5,7 +5,7 @@ import i18next from 'i18next';
 import Dropdown from '../NavDropdown';
 import { NavItems } from './style';
 import { useTranslation } from 'react-i18next';
-import { MenuItemsProps } from '../../types/MenuItemsProps';
+import { MenuItemsProps } from '../../utils/types/MenuItemsProps';
 
 const MenuItems: FC<MenuItemsProps> = ({ items, depthLevel, onClick, toggleTheme }) => {
   const [dropdown, setDropdown] = useState<boolean>(false);

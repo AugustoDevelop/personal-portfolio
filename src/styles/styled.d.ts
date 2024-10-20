@@ -14,5 +14,12 @@ declare module 'styled-components' {
       subTitle: string;
     };
 
+    backgroundURLPortfolio : string;
+    borderURLPortfolio : string;
+    backgroundRepositoryPortfolio : string;
+    borderRepositoryPortfolio: string;
+    fontColorLinksPortfolio: string;
+    imgRepositoryPortfolio: SVGAElement;
+    imgURLPortfolio: SVGAElement;
   }
 }

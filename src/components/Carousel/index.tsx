@@ -31,7 +31,7 @@ import { useTranslation } from 'react-i18next';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-export default function Carrossel() {
+export default function Carousel() {
   const { t } = useTranslation()
   const { title } = useContext(ThemeContext) || {};
 

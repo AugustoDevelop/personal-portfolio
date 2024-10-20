@@ -1,9 +1,9 @@
 import React from 'react';
-import { menuItems } from '../../types/NavMenuItemsProps';
+import { menuItems } from '../../utils/types/NavMenuItemsProps';
 import NavMenuItems from '../NavMenuItems';
 import { Nav, Container } from './style';
 import { Link } from 'react-router-dom';
-import { ThemeProps } from '../../types/ThemeProps';
+import { ThemeProps } from '../../utils/types/ThemeProps';
 
 const Header: React.FC<ThemeProps> = ({ toggleTheme }) => {
 

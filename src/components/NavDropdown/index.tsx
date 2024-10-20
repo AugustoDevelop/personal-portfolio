@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import NavMenuItems from '../NavMenuItems';
 import { NavDrop } from './style';
-import { NavDropdownProps } from '../../types/NavDropdownProps';
+import { NavDropdownProps } from '../../utils/types/NavDropdownProps';
 
 const NavDropdown: FC<NavDropdownProps> = ({ submenus, dropdown, depthLevel, onClick, toggleTheme }) => {
   depthLevel = depthLevel + 1;

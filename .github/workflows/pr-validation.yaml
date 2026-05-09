@@ -11,7 +11,7 @@ concurrency:
 jobs:
   validate-template:
     name: Validate PR Template
-    runs-on: bayer-int-external-linux
+    runs-on: ubuntu-latest
     steps:
 
       # ──────────────────────────────────────────────
@@ -24,6 +24,11 @@ jobs:
           script: |
             const branch = context.payload.pull_request.head.ref;
             const prUrl  = context.payload.pull_request.html_url;
+            
+            console.log(`branch: ${branch}`)
+            console.log(`prUrl: ${prUrl}`)
+            console.log(`github.head_ref: ${github.head_ref}`)
+            
 
             let templateUrl  = null;
             let templateName = null;
@@ -59,27 +64,27 @@ jobs:
             const prBody = context.payload.pull_request.body || '';
 
             // Database changes validation
-            const hasDbChanges       = prBody.match(/- \[x\] Yes, database changes required/i);
-            const noDbChanges        = prBody.match(/- \[x\] No database changes/i);
+            const hasDbChanges       = prBody.match(/- \[x\] Yes, liquibase PR included/i);
+            const noDbChanges        = prBody.match(/- \[x\] N/A/i);
             const liquibaseLink      = prBody.match(/Liquibase PR:\s*\[([^\]]+)\]\(([^)]+)\)/);
             const hasValidLiquibase  = liquibaseLink && liquibaseLink[2] && !liquibaseLink[2].includes('LINK-PR');
 
             // Frontend PR validation
-            const hasFrontendChanges = prBody.match(/- \[x\] Yes, frontend PR (required|included)/i);
-            const noFrontendChanges  = prBody.match(/- \[x\] No frontend changes/i);
+            const hasFrontendChanges = prBody.match(/- \[x\] Yes, frontend PR included/i);
+            const noFrontendChanges  = prBody.match(/- \[x\] N/A/i);
             const frontendLink       = prBody.match(/Frontend PR:\s*\[([^\]]+)\]\(([^)]+)\)/);
             const hasValidFrontend   = frontendLink && frontendLink[2] && !frontendLink[2].includes('LINK-PR');
 
             let issues = [];
 
             if (!hasDbChanges && !noDbChanges) {
-              issues.push('❌ **Database changes section** - Selecione "No database changes" ou "Yes, database changes required".');
+              issues.push('❌ **Database changes section** - Selecione "N/A" ou "Yes, liquibase PR included".');
             } else if (hasDbChanges && !hasValidLiquibase) {
               issues.push('❌ **Database changes marcado**, mas o link do Liquibase PR não foi fornecido.');
             }
 
             if (!hasFrontendChanges && !noFrontendChanges) {
-              issues.push('❌ **Frontend changes section** - Selecione "No frontend changes" ou "Yes, frontend PR required".');
+              issues.push('❌ **Frontend changes section** - Selecione "N/A" ou "Yes, frontend PR required".');
             } else if (hasFrontendChanges && !hasValidFrontend) {
               issues.push('❌ **Frontend changes marcado**, mas o link do Frontend PR não foi fornecido.');
             }
@@ -106,8 +111,8 @@ jobs:
               const body = `## 🔍 Hotfix Template Validation\n\n${issues.join('\n')}\n\n---\n\n` +
                            `**Preencha todas as seções obrigatórias do template.**\n\n` +
                            `**Dicas:**\n` +
-                           `- Database changes: selecione No ou Yes\n` +
-                           `- Frontend changes: selecione No ou Yes\n` +
+                           `- Database changes: selecione N/A ou Yes\n` +
+                           `- Frontend changes: selecione N/A ou Yes\n` +
                            `- Se Yes para banco, adicione o link do Liquibase PR\n` +
                            `- Se Yes para frontend, adicione o link do Frontend PR`;
 
@@ -154,12 +159,12 @@ jobs:
               issues.push(`❌ **Template incorreto** - Use o Release Template: [Clique aqui](${prUrl}?template=release_template.md)`);
             } else {
               const hasFrontend      = prBody.match(/- \[x\] Yes, frontend PR included/i);
-              const noFrontend       = prBody.match(/- \[x\] No frontend changes/i);
+              const noFrontend       = prBody.match(/- \[x\] N/A/i);
               const frontendLink     = prBody.match(/Frontend PR:\s*\[([^\]]+)\]\(([^)]+)\)/);
               const hasValidFrontend = frontendLink && frontendLink[2] && !frontendLink[2].includes('LINK-PR');
 
               if (!hasFrontend && !noFrontend) {
-                issues.push('❌ **Frontend changes section** - Selecione "No frontend changes" ou "Yes, frontend PR included".');
+                issues.push('❌ **Frontend changes section** - Selecione "N/A" ou "Yes, frontend PR included".');
               } else if (hasFrontend && !hasValidFrontend) {
                 issues.push('❌ **Frontend changes marcado**, mas o link do Frontend PR não foi fornecido.');
               }
@@ -232,13 +237,13 @@ jobs:
             } else if (!hasDescribe || !hasIssue || !hasChecklist) {
               issues.push('⚠️ **Seções obrigatórias faltando** no template padrão.');
             } else {
-              const noFrontend       = prBody.match(/- \[x\] No frontend changes/i);
               const hasFrontend      = prBody.match(/- \[x\] Yes, frontend PR included/i);
+              const noFrontend       = prBody.match(/- \[x\] N/A/i);
               const frontendLink     = prBody.match(/Frontend PR:\s*\[([^\]]+)\]\(([^)]+)\)/);
               const hasValidFrontend = frontendLink && frontendLink[2] && !frontendLink[2].includes('LINK-PR');
 
               if (!noFrontend && !hasFrontend) {
-                issues.push('❌ **Frontend PR section** - Selecione "No frontend changes" ou "Yes, frontend PR included".');
+                issues.push('❌ **Frontend PR section** - Selecione "N/A" ou "Yes, frontend PR included".');
               } else if (hasFrontend && !hasValidFrontend) {
                 issues.push('❌ **Frontend PR marcado**, mas o link não foi fornecido.');
               }
@@ -260,7 +265,7 @@ jobs:
                            `- \`## Describe your changes\`\n` +
                            `- \`## Issue ticket number and link\`\n` +
                            `- \`## Checklist before requesting a review\`\n` +
-                           `- **Frontend PR**: selecione No ou Yes (com link)`;
+                           `- **Frontend PR**: selecione N/A ou Yes (com link)`;
 
               if (botComment) {
                 await github.rest.issues.updateComment({

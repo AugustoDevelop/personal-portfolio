@@ -11,10 +11,10 @@
 
 ## Database Changes
 **Did this hotfix require database changes?**
-- [ ] No database changes
-- [ ] Yes, database changes required
+- [ ] Yes, liquibase PR included
+- [ ] N/A
 
-### Liquibase PR (Only if database changes required)
+### Liquibase PR (if applicable)
 - Liquibase PR: [LINK-PR]()
 - Rollback script available:
     - [ ] Yes
@@ -22,8 +22,8 @@
 
 ## Frontend PR (if applicable)
 **Does this release include frontend changes?**
-- [ ] No frontend changes
 - [ ] Yes, frontend PR included
+- [ ] N/A
 
 ### Frontend PR Link (if applicable)
 - Frontend PR: [LINK-PR]()

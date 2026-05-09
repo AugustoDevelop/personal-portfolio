@@ -1,0 +1,286 @@
+name: PR Validation
+
+on:
+  pull_request:
+    types: [opened, edited]
+
+concurrency:
+  group: pr-validation-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate-template:
+    name: Validate PR Template
+    runs-on: bayer-int-external-linux
+    steps:
+      - name: Validate Hotfix/Fix Template
+        if: startsWith(github.head_ref, 'hotfix/') || startsWith(github.head_ref, 'fix/')
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const prBody = context.payload.pull_request.body || '';
+            
+            // Database changes validation
+            const hasDbChanges = prBody.match(/- \[x\] Yes, database changes required/i);
+            const noDbChanges = prBody.match(/- \[x\] No database changes/i);
+            const liquibaseLink = prBody.match(/Liquibase PR:\s*\[([^\]]+)\]\(([^)]+)\)/);
+            const hasValidLiquibaseLink = liquibaseLink && 
+                                         liquibaseLink[2] && 
+                                         liquibaseLink[2] !== '' && 
+                                         !liquibaseLink[2].includes('LINK-PR');
+            
+            // Frontend PR validation
+            const hasFrontendChanges = prBody.match(/- \[x\] Yes, frontend PR required/i);
+            const noFrontendChanges = prBody.match(/- \[x\] No frontend changes/i);
+            const frontendLink = prBody.match(/Frontend PR:\s*\[([^\]]+)\]\(([^)]+)\)/);
+            const hasValidFrontendLink = frontendLink && 
+                                        frontendLink[2] && 
+                                        frontendLink[2] !== '' && 
+                                        !frontendLink[2].includes('LINK-PR');
+            
+            let issues = [];
+            
+            // Validate database changes selection is mandatory
+            if (!hasDbChanges && !noDbChanges) {
+              issues.push('❌ **Database changes section** - You must select either "No database changes" or "Yes, database changes required".');
+            } else if (hasDbChanges && !hasValidLiquibaseLink) {
+              issues.push('❌ **Database changes marked**, but the Liquibase PR link was not provided or is empty.');
+            }
+            
+            // Validate frontend changes selection is mandatory
+            if (!hasFrontendChanges && !noFrontendChanges) {
+              issues.push('❌ **Frontend changes section** - You must select either "No frontend changes" or "Yes, frontend PR required".');
+            } else if (hasFrontendChanges && !hasValidFrontendLink) {
+              issues.push('❌ **Frontend changes marked**, but the Frontend PR link was not provided or is empty.');
+            }
+            
+            // Check mandatory sections
+            const hasRootCause = prBody.match(/### Root Cause\s*\n\s*[^_\s]/);
+            const hasSolution = prBody.match(/### Solution Implemented\s*\n\s*[^_\s]/);
+            const hasTestingEvidence = prBody.match(/## Testing Evidence\s*\n\s*[^_\s]/);
+            
+            if (!hasRootCause) issues.push('⚠️ **Root Cause** was not filled.');
+            if (!hasSolution) issues.push('⚠️ **Solution Implemented** was not filled.');
+            if (!hasTestingEvidence) issues.push('⚠️ **Testing Evidence** was not filled.');
+            
+            if (issues.length > 0) {
+              const comment = `
+              ## 🔍 Hotfix Template Validation
+              
+              ${issues.join('\n')}
+              
+              ---
+              
+              **Please complete all required sections of the template.**
+              
+              **TIP:**
+              - **Database changes**: You MUST select one option (No/Yes)
+              - **Frontend changes**: You MUST select one option (No/Yes)
+              - If you select "Yes" for database changes, add the Liquibase PR link
+              - If you select "Yes" for frontend changes, add the Frontend PR link
+              - Ensure all mandatory sections are filled
+              `;
+              
+              const { data: comments } = await github.rest.issues.listComments({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+              });
+              
+              const botComment = comments.find(c => 
+                c.user.type === 'Bot' && c.body.includes('Hotfix Template Validation')
+              );
+              
+              if (botComment) {
+                await github.rest.issues.updateComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  comment_id: botComment.id,
+                  body: comment
+                });
+              } else {
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: context.issue.number,
+                  body: comment
+                });
+              }
+              
+              core.setFailed('Hotfix template incomplete or invalid');
+            } else {
+              const { data: comments } = await github.rest.issues.listComments({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+              });
+              
+              const botComment = comments.find(c => 
+                c.user.type === 'Bot' && c.body.includes('Hotfix Template Validation')
+              );
+              
+              if (botComment) {
+                await github.rest.issues.deleteComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  comment_id: botComment.id,
+                });
+              }
+            }
+
+      - name: Validate Release Template
+        if: startsWith(github.head_ref, 'release/')
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const prBody = context.payload.pull_request.body || '';
+            const isReleaseTemplate = prBody.includes('## Release Information');
+            
+            let issues = [];
+            
+            if (!isReleaseTemplate) {
+              issues.push('❌ **Incorrect template** - Release template was not used.');
+            } else {
+              // Check for frontend PR selection (mandatory)
+              const hasFrontendChanges = prBody.match(/- \[x\] Yes, frontend PR included/i);
+              const noFrontendChanges = prBody.match(/- \[x\] No frontend changes/i);
+              const frontendLink = prBody.match(/Frontend PR:\s*\[([^\]]+)\]\(([^)]+)\)/);
+              const hasValidFrontendLink = frontendLink && 
+                                          frontendLink[2] && 
+                                          frontendLink[2] !== '' && 
+                                          !frontendLink[2].includes('LINK-PR');
+              
+              if (!hasFrontendChanges && !noFrontendChanges) {
+                issues.push('❌ **Frontend changes section** - You must select either "No frontend changes" or "Yes, frontend PR included".');
+              } else if (hasFrontendChanges && !hasValidFrontendLink) {
+                issues.push('❌ **Frontend changes marked**, but the Frontend PR link was not provided.');
+              }
+            }
+            
+            if (issues.length > 0) {
+              const comment = `
+              ## ⚠️ Release Template Validation
+              
+              ${issues.join('\n')}
+              
+              ---
+              
+              **Please:**
+              - Use the release template: [Use Release Template](${context.payload.pull_request.html_url}?template=release_template.md)
+              - **Frontend changes**: Select one option (No/Yes)
+              - If frontend changes are included, provide the Frontend PR link
+              `;
+              
+              const { data: comments } = await github.rest.issues.listComments({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+              });
+              
+              const botComment = comments.find(c => 
+                c.user.type === 'Bot' && c.body.includes('Release Template Validation')
+              );
+              
+              if (botComment) {
+                await github.rest.issues.updateComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  comment_id: botComment.id,
+                  body: comment
+                });
+              } else {
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: context.issue.number,
+                  body: comment
+                });
+              }
+              
+              core.setFailed('Release template validation failed');
+            }
+
+      - name: Validate Default Template
+        if: |
+          !startsWith(github.head_ref, 'hotfix/') && 
+          !startsWith(github.head_ref, 'fix/') && 
+          !startsWith(github.head_ref, 'release/')
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const prBody = context.payload.pull_request.body || '';
+            
+            const isHotfixTemplate = prBody.includes('## Hotfix') || prBody.includes('## Hotfix');
+            const isReleaseTemplate = prBody.includes('## Release Information') || prBody.includes('## Release');
+            
+            const hasDescribeChanges = prBody.includes('## Describe your changes');
+            const hasIssueTicket = prBody.includes('## Issue ticket number and link');
+            const hasChecklist = prBody.includes('## Checklist before requesting a review');
+            
+            let issues = [];
+            
+            if (isHotfixTemplate || isReleaseTemplate) {
+              const templateType = isHotfixTemplate ? 'hotfix' : 'release';
+              issues.push(`❌ **Wrong template** - Using ${templateType} template for non-${templateType} branch.`);
+            } else if (!hasDescribeChanges || !hasIssueTicket || !hasChecklist) {
+              issues.push('⚠️ **Missing required sections** from the default template.');
+            } else {
+              // Check frontend PR - must select an option
+              const noFrontendChanges = prBody.match(/- \[x\] No frontend changes required/i);
+              const hasFrontendPR = prBody.match(/- \[x\] Frontend PR linked:/i);
+              const frontendLink = prBody.match(/Frontend PR linked:\s*\[([^\]]+)\]\(([^)]+)\)/);
+              const hasValidFrontendLink = frontendLink && 
+                                          frontendLink[2] && 
+                                          frontendLink[2] !== '' && 
+                                          !frontendLink[2].includes('LINK-PR');
+              
+              if (!noFrontendChanges && !hasFrontendPR) {
+                issues.push('❌ **Frontend PR section** - You must select either "No frontend changes required" or "Frontend PR linked".');
+              } else if (hasFrontendPR && !hasValidFrontendLink) {
+                issues.push('❌ **Frontend PR checkbox marked** but link is missing or is a placeholder.');
+              }
+            }
+            
+            if (issues.length > 0) {
+              const comment = `
+              ## Template Validation
+              
+              ${issues.join('\n')}
+              
+              ---
+              
+              **Please ensure your PR includes:**
+              - \`## Describe your changes\`
+              - \`## Issue ticket number and link\`
+              - \`## Checklist before requesting a review\`
+              - **Frontend PR**: You MUST select one option (No/Yes with link)
+              `;
+              
+              const { data: comments } = await github.rest.issues.listComments({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+              });
+              
+              const botComment = comments.find(c => 
+                c.user.type === 'Bot' && c.body.includes('Template Validation')
+              );
+              
+              if (botComment) {
+                await github.rest.issues.updateComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  comment_id: botComment.id,
+                  body: comment
+                });
+              } else {
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: context.issue.number,
+                  body: comment
+                });
+              }
+              
+              core.setFailed('Default PR template not properly used');
+            }
